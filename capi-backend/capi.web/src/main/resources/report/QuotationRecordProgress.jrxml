@@ -1,0 +1,1527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-01-12T12:21:40 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="QuotationRecordProgress" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="0dda69d8-95e2-4ec6-b5d9-db7fe38b8c92">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="purpose" class="java.lang.String"/>
+	<parameter name="batchCode" class="java.lang.String"/>
+	<parameter name="cpiSurveyForm" class="java.lang.String"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="cpiBasePeriod" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="groupId" class="java.lang.Integer"/>
+	<field name="groupCode" class="java.lang.String"/>
+	<field name="groupChineseName" class="java.lang.String"/>
+	<field name="groupEnglishName" class="java.lang.String"/>
+	<field name="subGroupId" class="java.lang.Integer"/>
+	<field name="subGroupCode" class="java.lang.String"/>
+	<field name="subGroupChineseName" class="java.lang.String"/>
+	<field name="subGroupEnglishName" class="java.lang.String"/>
+	<field name="qrTotal" class="java.lang.Long"/>
+	<field name="indoorTotal" class="java.lang.Long"/>
+	<field name="unstarted" class="java.lang.Long"/>
+	<field name="routine" class="java.lang.Long"/>
+	<field name="verification" class="java.lang.Long"/>
+	<field name="revisit" class="java.lang.Long"/>
+	<field name="allocation" class="java.lang.Long"/>
+	<field name="conversion" class="java.lang.Long"/>
+	<field name="reviewNoField" class="java.lang.Long"/>
+	<field name="reviewField" class="java.lang.Long"/>
+	<field name="noField" class="java.lang.Long"/>
+	<field name="field" class="java.lang.Long"/>
+	<sortField name="groupCode"/>
+	<sortField name="subGroupCode"/>
+	<variable name="subUnstarted" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{unstarted}]]></variableExpression>
+	</variable>
+	<variable name="totalUnstarted" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{unstarted}]]></variableExpression>
+	</variable>
+	<variable name="subRoutine" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{routine}]]></variableExpression>
+	</variable>
+	<variable name="totalRoutine" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{routine}]]></variableExpression>
+	</variable>
+	<variable name="subVerification" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{verification}]]></variableExpression>
+	</variable>
+	<variable name="totalVerification" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{verification}]]></variableExpression>
+	</variable>
+	<variable name="subRevisit" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{revisit}]]></variableExpression>
+	</variable>
+	<variable name="totalRevisit" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{revisit}]]></variableExpression>
+	</variable>
+	<variable name="subAllocation" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{allocation}]]></variableExpression>
+	</variable>
+	<variable name="totalAllocation" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{allocation}]]></variableExpression>
+	</variable>
+	<variable name="subConversion" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{conversion}]]></variableExpression>
+	</variable>
+	<variable name="totalConversion" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{conversion}]]></variableExpression>
+	</variable>
+	<variable name="subReviewField" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{reviewField}]]></variableExpression>
+	</variable>
+	<variable name="totalReviewField" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{reviewField}]]></variableExpression>
+	</variable>
+	<variable name="subReviewNoField" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{reviewNoField}]]></variableExpression>
+	</variable>
+	<variable name="totalReviewNoField" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{reviewNoField}]]></variableExpression>
+	</variable>
+	<variable name="subQRTotal" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qrTotal}]]></variableExpression>
+	</variable>
+	<variable name="totalQRTotal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{qrTotal}]]></variableExpression>
+	</variable>
+	<variable name="subNoField" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{noField}]]></variableExpression>
+	</variable>
+	<variable name="totalNoField" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{noField}]]></variableExpression>
+	</variable>
+	<variable name="collection" class="java.lang.Double" resetType="Column">
+		<variableExpression><![CDATA[SUM($F{routine},$F{verification}, $F{revisit})]]></variableExpression>
+	</variable>
+	<variable name="subCollection" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{collection}]]></variableExpression>
+	</variable>
+	<variable name="totalCollection" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{collection}]]></variableExpression>
+	</variable>
+	<variable name="review" class="java.lang.Double" resetType="Column">
+		<variableExpression><![CDATA[SUM($F{reviewField}, $F{reviewNoField})]]></variableExpression>
+	</variable>
+	<variable name="subReview" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{review}]]></variableExpression>
+	</variable>
+	<variable name="totalReview" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{review}]]></variableExpression>
+	</variable>
+	<variable name="month" class="java.lang.Double" resetType="Column">
+		<variableExpression><![CDATA[SUM($F{qrTotal}, $F{noField})]]></variableExpression>
+	</variable>
+	<variable name="subMonth" class="java.lang.Double" resetType="Group" resetGroup="GroupByGroup" calculation="Sum">
+		<variableExpression><![CDATA[$V{month}]]></variableExpression>
+	</variable>
+	<variable name="totalMonth" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{month}]]></variableExpression>
+	</variable>
+	<variable name="totalField" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{field}]]></variableExpression>
+	</variable>
+	<variable name="totalIndoorTotal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{indoorTotal}]]></variableExpression>
+	</variable>
+	<group name="FirstRow">
+		<groupHeader>
+			<band height="20">
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="20" uuid="36d5f280-667a-4e3c-8987-c0f3589295d7">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Purpose:   ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="400" y="0" width="100" height="20" uuid="3ab9f07c-a12b-4f76-bb2e-36dd7f86afe1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Batch Code:   ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="100" y="0" width="300" height="20" uuid="4e404d87-76ed-4300-808a-014b75e30455"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{purpose}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="500" y="0" width="300" height="20" uuid="243b7447-0f3f-42d7-98ca-35e9c7843877"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{batchCode}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="SecondRow">
+		<groupHeader>
+			<band height="20">
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="20" uuid="2fa4ce0b-8898-46a2-ac24-e930eeae59b2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CPI Survey Form:   ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="275" y="0" width="100" height="20" uuid="6f97f352-830f-4197-876f-03243baa0cea"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Period:   ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="100" y="0" width="175" height="20" uuid="1bb989c6-93bd-47b5-b871-f0cec775d431">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{cpiSurveyForm}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="375" y="0" width="175" height="20" uuid="0ed618ac-b400-4032-b743-9373018eaae3">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="550" y="0" width="100" height="20" uuid="4d93aa93-611f-41d7-a337-05f7fad513f3"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CPI Base Period:   ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="650" y="0" width="150" height="20" uuid="2991bdf2-b298-4dc9-b7d6-3a2540d6077f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{cpiBasePeriod}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="ThirdRow">
+		<groupHeader>
+			<band height="80">
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="200" height="50" uuid="32abfd32-5869-4f10-908d-672f0f9d8945"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No. of unstarted quotation records]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="200" y="0" width="200" height="30" uuid="d0015fda-8460-47ec-a4f8-993948c39982"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No. of quotation records in data collection stage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="400" y="0" width="200" height="30" uuid="9306555c-1135-4c4d-8ffa-62f3e8773e84"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No. of quotation records in data allocation/conversion/review stage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="600" y="0" width="200" height="30" uuid="f97c1247-b46f-4c4b-bafc-52fd4f1fab15"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total no. of quotation records of the survey month]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="200" y="30" width="47" height="20" uuid="5566aa32-5bd9-4180-a71f-6b08fdafe463">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Routine]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="247" y="30" width="55" height="20" uuid="1730eb38-b201-4b6c-9467-633d38a501ff">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Verification]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="302" y="30" width="48" height="20" uuid="13442f1f-da2a-4cd5-beda-2761f91a9ed4">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Revisit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="350" y="30" width="50" height="20" uuid="54af771a-c475-48af-b34e-80ba7654473e"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sub-total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="400" y="30" width="65" height="20" uuid="89e2c38d-6274-49ec-a222-e6a604083b48">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="465" y="30" width="65" height="20" uuid="55091f67-5294-4dad-8256-2a4ef03d713e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="530" y="30" width="70" height="20" uuid="7fd0ae7c-3cba-447b-a276-256e8ae0c930">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sub-total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="600" y="30" width="65" height="20" uuid="d1f3e4bb-1360-4c87-bce5-6c7e78a4f61d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="665" y="30" width="65" height="20" uuid="2fb1cc0e-82f6-4b2d-b4ae-0e53e17a774f">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="730" y="30" width="70" height="20" uuid="b26f517e-d63c-45dd-97d6-127116884973">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="50" width="200" height="30" uuid="d3b1a386-ec34-488c-95fd-c991f9b0abd4"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE(
+	new java.text.DecimalFormat("0.#").format($V{totalUnstarted}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalUnstarted}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="200" y="50" width="47" height="30" uuid="6856d969-e6e6-44ec-ba6f-c73b22bd6c28"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE(
+	new java.text.DecimalFormat("0.#").format($V{totalRoutine}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalRoutine}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="247" y="50" width="55" height="30" uuid="97f7743e-99aa-4e9b-9bc5-568dca1307ce"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalVerification}),
+	" (",
+	IF($V{totalQRTotal}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalVerification}.doubleValue() /$V{totalQRTotal}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="302" y="50" width="48" height="30" uuid="4fa7ee28-0078-4469-9652-d2167da74997"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalRevisit}),
+	" (",
+	IF($V{totalQRTotal}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalRevisit}.doubleValue() / $V{totalQRTotal}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="350" y="50" width="50" height="30" uuid="1525d80c-9519-4ea6-9603-ec16c153e14f"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalCollection}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalCollection}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="465" y="50" width="65" height="30" uuid="ff476e01-a042-4a76-967a-d834d2a7870c"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalReviewNoField}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalReviewNoField}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="400" y="50" width="65" height="30" uuid="7915b0c9-90bc-4abe-bc05-3cd00b276469"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalReviewField}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+	new java.text.DecimalFormat("0.0").format($V{totalReviewField}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="530" y="50" width="70" height="30" uuid="56d2738e-6c24-4467-9b33-a0f5a3280d20"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE(
+	new java.text.DecimalFormat("0.#").format($V{totalReview}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+new java.text.DecimalFormat("0.0").format($V{totalReview}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="600" y="50" width="65" height="30" uuid="280ac1e8-217f-4f89-b76b-f2cbf1c98392"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalQRTotal}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+new java.text.DecimalFormat("0.0").format($V{totalQRTotal}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="665" y="50" width="65" height="30" uuid="4dbb2a3d-1364-41d0-af58-add7bda595af"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[CONCATENATE( 
+	new java.text.DecimalFormat("0.#").format($V{totalNoField}),
+	" (",
+	IF($V{totalMonth}.doubleValue() == 0.0, "0.0%", 
+new java.text.DecimalFormat("0.0").format($V{totalNoField}.doubleValue() / $V{totalMonth}.doubleValue() * 100) + "%").toString(),
+	")"
+)]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="730" y="50" width="70" height="30" uuid="1a844ca2-e54c-4a9f-9d7f-05a6ef754a03"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalMonth})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="FourthRow">
+		<groupHeader>
+			<band height="50">
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="75" y="0" width="75" height="50" uuid="dc375762-ec75-4cf1-9181-ebcd3818eaf6">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1) No. of unstarted quotation records]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="75" height="50" uuid="e7c1d210-6e2f-4157-a972-133b5e9f7f51">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="150" y="0" width="200" height="30" uuid="1de209c6-acd2-4223-9498-6314c1611374"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2) No. of quotation records in data collection stage ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="150" y="30" width="47" height="20" uuid="f29a2064-caff-4421-80f6-449ce88d8ca8">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Routine]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="197" y="30" width="55" height="20" uuid="25d81a99-9c95-400c-a65c-f81f6c44a459">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Verification]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="252" y="30" width="48" height="20" uuid="6644302e-7a9f-41d5-a17e-9c44df901659">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Revisit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="300" y="30" width="50" height="20" uuid="d237f577-9b67-4b83-ac71-ba40fc333635"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sub-total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="350" y="0" width="75" height="50" uuid="12973899-b21e-4543-a0a8-e0364bcd6a9d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3) No. of quotation records in indoor allocation stage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="425" y="0" width="75" height="50" uuid="b9cbdbbd-38f8-4188-85ce-c73f77336900">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4) No. of quotation records in conversion stage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="500" y="0" width="150" height="30" uuid="cad7c5a9-eafa-42ee-a380-36f5c3cd9190">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5) No. of quotation records in review stage ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="650" y="0" width="150" height="30" uuid="7f570a2b-532f-47b3-9505-a2bca48657cb">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total no. of quotation records of the survey month]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="500" y="30" width="50" height="20" uuid="ccb240a1-8fe8-4f90-ac02-d7ff8e1ec65d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="550" y="30" width="50" height="20" uuid="4f4879ed-f84a-45f1-8fad-14e0cff98acc">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="600" y="30" width="50" height="20" uuid="1dc620db-b603-44f9-9990-9b8392d2c3b5">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sub-total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="650" y="30" width="50" height="20" uuid="47a0bc58-95b3-4f96-87b4-e36a1afe7852">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="700" y="30" width="50" height="20" uuid="83a4e9e8-036b-4cf4-bd58-6530a871f2f7">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[No field]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="750" y="30" width="50" height="20" uuid="dbdfba08-b31b-4500-978f-26298e326d20">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="GroupByGroup">
+		<groupExpression><![CDATA[$F{groupCode}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="75" height="30" uuid="3632ddd1-ceb3-407d-87f7-acf44bc158bd"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[IF(LEN($F{groupCode}) == 0 && LEN($F{groupEnglishName}) == 0, "", $F{groupCode} +" - " + $F{groupEnglishName})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="75" y="0" width="75" height="30" uuid="f54d6bd6-258c-4af9-a86d-c9dd83042dff"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subUnstarted})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="150" y="0" width="47" height="30" uuid="9f741648-94c9-4075-a4f0-12d0e58904eb"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subRoutine})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="197" y="0" width="55" height="30" uuid="fbcab57b-46bc-49fc-9490-26d37b448be4"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subVerification})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="252" y="0" width="48" height="30" uuid="91a3fd23-f21a-4c55-becd-1928185b71fa"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subRevisit})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="350" y="0" width="75" height="30" uuid="2e1187b6-e4d6-4bb5-82a1-d4870dd7004d"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subAllocation})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="425" y="0" width="75" height="30" uuid="aaf64bd5-abf8-4c73-97b0-b72c2d2d5071"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subConversion})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="300" y="0" width="50" height="30" uuid="cca17f4e-7174-4033-8fdd-56ab1893821d"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subCollection})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="550" y="0" width="50" height="30" uuid="47bcae8c-f267-41c4-88be-0bd59df5dba9"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subReviewNoField})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="500" y="0" width="50" height="30" uuid="064ab1ba-1261-4ba8-aaf1-d9bc1af0be94"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subReviewField})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="600" y="0" width="50" height="30" uuid="f62a9698-7c81-4cbf-b4fe-c16f4562ed56"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subReview})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="650" y="0" width="50" height="30" uuid="440dd9c5-2f8f-4647-9b82-2ecec55d4981"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subQRTotal})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="700" y="0" width="50" height="30" uuid="bee478e7-a982-4278-b3bf-d18b5d9ccd0e"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subNoField})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="750" y="0" width="50" height="30" uuid="38fb0304-b213-419f-83b1-eaf22ebdefad"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{subMonth})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="312" y="0" width="179" height="60" uuid="dbe32deb-e6d3-40df-a691-0a0bd08af044">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HKSAR
+Census and Statistics Department
+Consumer Price Index Section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="312" y="60" width="179" height="40" uuid="04b8e597-728f-4989-bb32-833a5099f871">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quotation Record Progress report]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="642" y="0" width="158" height="18" uuid="566b650e-7939-4994-81eb-ff7d79f44421">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="75" height="30" uuid="ee9d66c5-77f0-4721-8caf-5fb4def97510"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF(LEN($F{subGroupCode}) == 0 && LEN($F{subGroupEnglishName}) == 0, "", $F{subGroupCode} + " - " + $F{subGroupEnglishName})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="75" y="0" width="75" height="30" uuid="042f09b9-0999-4221-a06f-b80114846ff7"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unstarted}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="150" y="0" width="47" height="30" uuid="041da059-41fe-473e-a6d5-2ba3764546fb"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{routine}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="197" y="0" width="55" height="30" uuid="7622ee25-8b5c-4b5e-9762-e92e1da5f76f"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{verification}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="252" y="0" width="48" height="30" uuid="3ced3c49-22f6-4634-925a-c4a527f178ee"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{revisit}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="350" y="0" width="75" height="30" uuid="375e553f-0d57-4da9-8dd6-a575433d2e92"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{allocation}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="425" y="0" width="75" height="30" uuid="bce181d4-18b2-4319-8b43-fdc24552bb21"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{conversion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="300" y="0" width="50" height="30" uuid="33d8b147-d137-466c-b66a-4c66b4fcd2a2"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{collection})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="550" y="0" width="50" height="30" uuid="396ebe8c-4d41-45d8-be35-e8a16333ff88"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reviewNoField}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="500" y="0" width="50" height="30" uuid="9a4c6229-b7ab-4644-93ce-49d9b25e4994"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reviewField}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="600" y="0" width="50" height="30" uuid="4cc08934-84be-4272-a351-a679c2f3bf01"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{review})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="650" y="0" width="50" height="30" uuid="21d7e03f-97e7-4d60-8547-8f0b10f5c34c"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qrTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="700" y="0" width="50" height="30" uuid="6a22270e-aea2-460a-a7da-56217b5f1cdb"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noField}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="750" y="0" width="50" height="30" uuid="90260d9d-7ff4-4791-8c71-d7a33e58afef"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{month})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="743" y="10" width="21" height="16" uuid="9b80e4b5-daed-47ce-a1db-4c08de7ded99">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="780" y="10" width="21" height="16" uuid="e4050b68-8079-49ee-a940-a8e8a00439ca">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="764" y="10" width="16" height="16" uuid="e87c40f6-41c6-4483-a55e-83ec6aa4fada">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="690" y="10" width="53" height="16" uuid="8060dfb3-35ff-46a6-92b0-3ae08a3687f2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Page:  ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="75" height="30" uuid="aed46a74-560b-41c8-bc2c-12683ec337bb"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Count:  ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="75" y="0" width="75" height="30" uuid="b5ed217d-dfe5-47a0-b79b-0047190be57d"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalUnstarted})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="150" y="0" width="47" height="30" uuid="47c8950a-adc7-4b57-a39a-8bb1cd4ad960"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalRoutine})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="197" y="0" width="55" height="30" uuid="762625e6-bc5f-439e-ac54-33acd5ba57de"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalVerification})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="252" y="0" width="48" height="30" uuid="5f0931ab-90cb-4974-b027-ad0c4fafba2d"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalRevisit})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="300" y="0" width="50" height="30" uuid="fce8d7b4-a14f-4542-b05f-fff4c653195d"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalCollection})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="350" y="0" width="75" height="30" uuid="ea5b500e-5b98-46cd-9c44-b5987d6bc58e"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalAllocation})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="425" y="0" width="75" height="30" uuid="12ae14e2-c599-4154-938b-99f3d3735320"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalConversion})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="500" y="0" width="50" height="30" uuid="4c403397-04da-42c0-b5fe-bb905fac759b"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalReviewField})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="550" y="0" width="50" height="30" uuid="a41d790f-859a-44c4-90bd-b28b850d08a7"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalReviewNoField})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="600" y="0" width="50" height="30" uuid="cd2767de-bb6f-41db-8f63-8678705b0a58"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalReview})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="650" y="0" width="50" height="30" uuid="59551e16-4f6c-471d-8da6-703e1b74fc11"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalQRTotal})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="700" y="0" width="50" height="30" uuid="4b4acc31-d13e-4c51-9bc0-4bae1ec250e6"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalNoField})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="750" y="0" width="50" height="30" uuid="33bff3c0-0aaf-4178-851c-69e829b57ac9"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("0.#").format($V{totalMonth})]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

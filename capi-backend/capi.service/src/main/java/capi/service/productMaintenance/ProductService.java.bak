@@ -1,0 +1,476 @@
+package capi.service.productMaintenance;
+
+import java.io.File;
+import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
+
+import org.apache.commons.lang3.ArrayUtils;
+import org.castor.core.util.StringUtil;
+import org.apache.commons.collections4.CollectionUtils;
+import org.hibernate.criterion.Order;
+import org.hibernate.mapping.Array;
+import org.jboss.logging.Logger;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+
+import capi.dal.ProductGroupDao;
+import capi.dal.ProductSpecificationDao;
+import capi.dal.ProductAttributeDao;
+import capi.dal.ProductDao;
+import capi.entity.ProductGroup;
+import capi.entity.ProductSpecification;
+import capi.entity.UOMCategory;
+import capi.entity.ProductAttribute;
+import capi.entity.District;
+import capi.entity.Product;
+import capi.entity.Unit;
+
+import capi.model.DatatableRequestModel;
+import capi.model.DatatableResponseModel;
+import capi.model.Select2RequestModel;
+import capi.model.Select2ResponseModel;
+import capi.model.Select2ResponseModel.Pagination;
+import capi.model.Select2ResponseModel.Select2Item;
+import capi.model.masterMaintenance.DistrictEditModel;
+import capi.model.productMaintenance.ProductEditModel;
+import capi.model.productMaintenance.ProductGroupEditModel;
+import capi.model.productMaintenance.ProductGroupTableList;
+import capi.model.productMaintenance.ProductSpecificationEditModel;
+import capi.model.productMaintenance.ProductTableList;
+import capi.service.AppConfigService;
+import capi.service.BaseService;
+
+@Service("ProductService")
+public class ProductService extends BaseService {
+	
+	@Autowired
+	private ProductDao productDao;
+	
+	@Autowired
+	private ProductGroupDao productGroupDao;
+	
+	@Autowired
+	private ProductAttributeDao productAttributeDao;
+
+	@Autowired
+	private ProductSpecificationDao productSpecificationDao;
+	
+	static private String productImagePath = "product";
+	
+	/** 
+	 * datatable query product group
+	 */
+	public DatatableResponseModel<ProductGroupTableList> queryProductGroup(DatatableRequestModel model){
+		
+		Order order = this.getOrder(model, "code", "chineseName", "englishName");
+		
+		String search = model.getSearch().get("value");
+		
+		List<ProductGroupTableList> result = productGroupDao.listProductGroup(search, model.getStart(), model.getLength(), order);
+					
+		DatatableResponseModel<ProductGroupTableList> response = new DatatableResponseModel<ProductGroupTableList>();
+		response.setDraw(model.getDraw());
+		response.setData(result);
+		Long recordTotal =productGroupDao.countProductGroup("");
+		response.setRecordsTotal(recordTotal.intValue());
+		Long recordFiltered = productGroupDao.countProductGroup(search);
+		response.setRecordsFiltered(recordFiltered.intValue());
+		
+		return response;
+	}
+	
+	/** 
+	 * datatable query product
+	 */
+	public DatatableResponseModel<ProductTableList> queryProduct(DatatableRequestModel model){
+		
+		Order order = this.getOrder(model, "productGroupCode", "productGroupChineseName", "productGroupEnglishName");
+		
+		String search = model.getSearch().get("value");
+		Integer productGroupId = !StringUtils.isEmpty(model.getSearch().get("productGroupId")) ? Integer.parseInt(model.getSearch().get("productGroupId")) : null;
+		String	status = model.getSearch().get("status");
+		Boolean	reviewed = !StringUtils.isEmpty(model.getSearch().get("reviewed")) ? (model.getSearch().get("reviewed").equals("Y") ? true : false ): null;
+				
+		List<ProductTableList> result = productDao.listProduct(search, productGroupId, status, reviewed, model.getStart(), model.getLength(), order);
+					
+		DatatableResponseModel<ProductTableList> response = new DatatableResponseModel<ProductTableList>();
+		response.setDraw(model.getDraw());
+		response.setData(result);
+		Long recordTotal =productDao.countProduct("",null,null,null);
+		response.setRecordsTotal(recordTotal.intValue());
+		Long recordFiltered = productDao.countProduct(search,productGroupId, status, reviewed);
+		response.setRecordsFiltered(recordFiltered.intValue());
+		
+		return response;
+	}
+	
+	/**
+	 * Get Product Group select2 format
+	 */
+	public Select2ResponseModel queryProductGroupSelect2(Select2RequestModel queryModel) {
+		queryModel.setRecordsPerPage(10);
+		
+		List<ProductGroup> productGroups = productGroupDao.searchProductGroup(queryModel.getTerm(), queryModel.getFirstRecord(), queryModel.getRecordsPerPage(), Order.asc("code"));
+		
+		Select2ResponseModel responseModel = new Select2ResponseModel();
+		
+		long recordsTotal = productGroupDao.countProductGroup(queryModel.getTerm());
+		queryModel.setRecordsTotal(recordsTotal);
+		boolean more = queryModel.hasMore();
+		Select2ResponseModel.Pagination pagination = responseModel.new Pagination();
+		pagination.setMore(more);
+		responseModel.setPagination(pagination);
+		
+		List<Select2ResponseModel.Select2Item> items = new ArrayList<Select2ResponseModel.Select2Item>();
+		for (ProductGroup productGroup : productGroups) {
+			Select2ResponseModel.Select2Item item = responseModel.new Select2Item();
+			item.setId(String.valueOf(productGroup.getProductGroupId()));
+			item.setText(getProductGroupSelectText(productGroup));
+			items.add(item);
+		}
+		responseModel.setResults(items);
+		
+		return responseModel;
+	}	
+	
+	/**
+	 * Get Product Group Select Text
+	 */
+	public String getProductGroupSelectText(ProductGroup productGroup) {
+		return productGroup.getCode() + " - " + productGroup.getEnglishName() + " " + productGroup.getChineseName();
+	}
+	
+	/**
+	 * Get ProductGroup by ID
+	 */
+	public ProductGroup getProductGroupById(int id) {
+		return productGroupDao.findById(id);
+	}
+	
+	/**
+	 * Get ProductGroup by Code
+	 */
+	public ProductGroup getProductGroupByCode(String code) {
+		return productGroupDao.getProductGroupsByCode(code);
+	}
+
+	/**
+	 * Get ProductGroupEditModel by ID
+	 */
+	public ProductGroupEditModel getProductGroupEditModelById(Integer id) {
+		return productGroupDao.getProductGroupEditModelById(id);
+	}
+	
+	/**
+	 * Get Product Attributes by Product Group ID
+	 */
+	public List<ProductAttribute> getProductAttributesByProductGroupId(int id) {
+		return productAttributeDao.getProductAttributeByProductGroupId(id);
+	}
+	
+	/**
+	 * Get ProductEditModel by ID
+	 */
+	public ProductEditModel getProductEditModelById(Integer id) {
+		return productDao.getProductEditModelById(id);
+	}
+	
+	/**
+	 * Get Product by ID
+	 * 
+	 */
+	
+	public Product getProductById(Integer id) {
+		return productDao.findById(id);
+	}
+	
+	/**
+	 * Check Product by ID
+	 * 
+	 * return true if exist
+	 */
+	
+	public boolean checkProductById(Integer id) {
+		return productDao.checkProductById(id);
+	}
+	
+	
+	/**
+	 * Get ProductSpecificationEditModel by ID
+	 */
+	public List<ProductSpecificationEditModel>  getProductSpecificationListByIds(Integer productId, Integer productGroupId) {
+		
+		List<ProductSpecificationEditModel> result = null;
+		
+		if (productId > 0) {
+			result = productDao.getProductSpecificationEditModelById(productId);
+		}
+		
+		if (productId == null || productId == 0 || result.size() == 0) {
+			result = productGroupDao.getProductSpecificationEditModelByProductGroupId(productGroupId);
+		}
+		
+		return result;
+	}
+	
+
+	
+	
+	/**
+	 * Save Product Group
+	 */
+	@Transactional(isolation=Isolation.REPEATABLE_READ)
+	public boolean saveProductGroup(ProductGroupEditModel model) {
+		ProductGroup oldEntity = null;
+		if (model.getProductGroupId() != null && model.getProductGroupId() > 0) {
+			oldEntity = getProductGroupById(model.getProductGroupId());
+		} else {
+			ProductGroup checkProductGroup = productGroupDao.getProductGroupsByCode(model.getCode());
+			if (checkProductGroup != null) 
+				return false;
+
+			oldEntity = new ProductGroup();
+		}
+		
+		BeanUtils.copyProperties(model, oldEntity);
+		
+		productGroupDao.save(oldEntity);
+		
+		List<ProductAttribute> oldAttributes = new ArrayList<ProductAttribute>();
+		if(oldEntity.getProductGroupId() != null){
+			oldAttributes = productAttributeDao.getProductAttributeByProductGroupId(oldEntity.getProductGroupId());
+		}
+
+		List<ProductAttribute> newAttributes = new ArrayList<ProductAttribute>();
+		List<Integer> oldIds = new ArrayList<Integer>();
+		
+		if(model.getProductAttributes() != null) {
+			newAttributes.addAll(model.getProductAttributes().values());	
+			for(ProductAttribute oldAttribute: oldAttributes){
+				oldIds.add(oldAttribute.getProductAttributeId());
+			}
+		}
+
+		List<Integer> newIds = new ArrayList<Integer>();
+			
+		if(newAttributes.size() > 0){
+			for(ProductAttribute newAttribute: newAttributes){
+				if (newAttribute.getProductAttributeId() != null && newAttribute.getProductAttributeId() > 0) {
+					newIds.add(newAttribute.getProductAttributeId());
+					ProductAttribute existingAttribute = productAttributeDao.findById(newAttribute.getProductAttributeId());
+					BeanUtils.copyProperties(newAttribute, existingAttribute);
+					existingAttribute.setProductGroup(oldEntity);
+					productAttributeDao.save(existingAttribute);
+				} else {
+					newAttribute.setProductGroup(oldEntity);
+					productAttributeDao.save(newAttribute);
+				}
+			}
+		}
+		
+		Collection<Integer> removeEntries = CollectionUtils.subtract(oldIds, newIds);
+	
+		if (removeEntries.size() > 0){
+			for (Integer removeEntry: removeEntries){
+				ProductAttribute attribute = productAttributeDao.findById(removeEntry);
+				productAttributeDao.delete(attribute);
+			}
+		}
+
+		productAttributeDao.flush();
+		productGroupDao.flush();
+		return true;
+
+	}
+
+	/**
+	 * Save Product
+	 * @throws Exception 
+	 */
+	@Transactional(isolation=Isolation.REPEATABLE_READ)
+	public void saveProduct(ProductEditModel model, InputStream photo1ImageStream, InputStream photo2ImageStream,String fileBaseLoc) throws Exception {
+		Product oldEntity = null;
+		ProductGroup groupEntity = null;
+		
+		if (model.getProductId() != null && model.getProductId() > 0) {
+			oldEntity = getProductById(model.getProductId());
+		} else {
+			oldEntity = new Product();
+			groupEntity = getProductGroupById(model.getProductGroupId());
+			oldEntity.setProductGroup(groupEntity);
+		}
+		
+		BeanUtils.copyProperties(model, oldEntity);
+		
+		if (photo1ImageStream != null) {
+			if (oldEntity.getPhoto1Path() != null) {
+				deleteImage(oldEntity.getPhoto1Path(), fileBaseLoc);
+			}
+			
+			String imagePath = saveImage(photo1ImageStream, fileBaseLoc, oldEntity.getProductId());
+			oldEntity.setPhoto1Path(imagePath);
+			oldEntity.setPhoto1ModifiedTime(new java.util.Date());
+		}
+		
+		if (photo2ImageStream != null) {
+			if (oldEntity.getPhoto2Path() != null) {
+				deleteImage(oldEntity.getPhoto2Path(), fileBaseLoc);
+			}
+			
+			String imagePath = saveImage(photo2ImageStream, fileBaseLoc, oldEntity.getProductId());
+			oldEntity.setPhoto2Path(imagePath);
+			oldEntity.setPhoto2ModifiedTime(new java.util.Date());
+		}
+
+		productDao.save(oldEntity);
+		
+		List<ProductSpecification> oldSpecifications = new ArrayList<ProductSpecification>();
+		if(model.getProductId() != null && model.getProductId() > 0){
+			oldSpecifications = productSpecificationDao.getProductSpecificationByProductId(oldEntity.getProductId());
+		}
+
+		List<ProductSpecificationEditModel> newSpecificationEditModels = new ArrayList<ProductSpecificationEditModel>();
+		List<Integer> oldIds = new ArrayList<Integer>();
+		
+		if(model.getProductSpecificationEditModels() != null) {
+			newSpecificationEditModels.addAll(model.getProductSpecificationEditModels().values());
+			for(ProductSpecification oldSpecification: oldSpecifications){
+				oldIds.add(oldSpecification.getProductSpecificationId());
+			}
+		}
+
+		List<Integer> newIds = new ArrayList<Integer>();
+			
+		if(newSpecificationEditModels.size() > 0){
+			for(ProductSpecificationEditModel newSpecificationEditModel: newSpecificationEditModels){
+				if (newSpecificationEditModel.getProductSpecificationId() != null && newSpecificationEditModel.getProductSpecificationId() > 0) {
+					newIds.add(newSpecificationEditModel.getProductSpecificationId());
+					ProductSpecification existingSpecification = productSpecificationDao.findById(newSpecificationEditModel.getProductSpecificationId());
+					BeanUtils.copyProperties(newSpecificationEditModel, existingSpecification);
+					existingSpecification.setProduct(oldEntity);
+					productSpecificationDao.save(existingSpecification);
+				} else {
+					ProductSpecification newSpecification = new ProductSpecification();
+					newSpecification.setValue(newSpecificationEditModel.getValue());
+					newSpecification.setProductAttribute(productAttributeDao.findById(newSpecificationEditModel.getProductAttributeId()));
+					newSpecification.setProduct(oldEntity);
+					productSpecificationDao.save(newSpecification);
+				}
+			}
+		}
+		
+		Collection<Integer> removeEntries = CollectionUtils.subtract(oldIds, newIds);
+		if (removeEntries.size() > 0){
+			for (Integer removeEntry: removeEntries){
+				ProductSpecification specification = productSpecificationDao.findById(removeEntry);
+				productSpecificationDao.delete(specification);
+			}
+		}
+		productSpecificationDao.flush();
+		productDao.flush();
+
+	}
+	
+	/**
+	 * Save product image
+	 */
+	public String saveImage(InputStream imageStream, String fileBaseLoc, Integer id) throws Exception {
+		File dir = new File(fileBaseLoc + "/" + productImagePath + "/"+ id);
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
+		String filename = UUID.randomUUID().toString();
+		
+		Path path = FileSystems.getDefault().getPath(dir.getAbsolutePath(), filename);
+		Files.copy(imageStream, path);
+		return "/" + productImagePath + "/"+ id + "/" + filename;
+	}
+	
+	/**
+	 * Delete product image
+	 */
+	public void deleteImage(String path, String fileBaseLoc) {
+		File imageFile = new File(fileBaseLoc + path);
+		if (imageFile.exists())
+			imageFile.delete();
+	}
+	
+	/**
+	 * Delete
+	 */
+	@Transactional
+	public boolean deleteProductGroup(List<Integer> ids) {
+		
+		List<ProductGroup> groups = productGroupDao.getProductGroupsByIds(ids);
+		if (groups.size() != ids.size()){
+			return false;
+		}
+		
+		List<ProductAttribute> attributes = productAttributeDao.getProductAttributeByProductGroupIds(ids);
+		
+		for (ProductAttribute attribute: attributes){
+			productAttributeDao.delete(attribute);
+		}
+		
+		for(ProductGroup group: groups){
+			productGroupDao.delete(group);
+		}
+		
+		productGroupDao.flush();
+		
+		return true;
+	}
+	
+	/**
+	 * Delete Product
+	 */
+	@Transactional
+	public boolean deleteProduct(List<Integer> ids) {
+		
+		List<Product> products = productDao.getProductByIds(ids);
+		if (products.size() != ids.size()){
+			return false;
+		}
+		
+		List<ProductSpecification> specifications = productSpecificationDao.getProductSpecificationByProductIds(ids);
+		
+		for (ProductSpecification specification: specifications){
+			productSpecificationDao.delete(specification);
+		}
+		
+		for(Product product: products){
+			productDao.delete(product);
+		}
+		
+		productDao.flush();
+		
+		return true;
+	}
+	
+	/**
+	 * Convert entity to model
+	 * @throws InvocationTargetException 
+	 * @throws IllegalAccessException 
+	 */
+	public ProductGroupEditModel convertEntityToModel(ProductGroup entity){
+
+		ProductGroupEditModel model = new ProductGroupEditModel();
+		BeanUtils.copyProperties(entity, model);
+		return model;
+		
+	}
+	
+
+}

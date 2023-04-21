@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile="ProjectRepository\pdffonts.v0.7.8.jar" -DgroupId="com.kinetix.jasper" -DartifactId="pdffonts" -Dversion=0.7.8 -DlocalRepositoryPath=ProjectRepository -Dpackaging=jar

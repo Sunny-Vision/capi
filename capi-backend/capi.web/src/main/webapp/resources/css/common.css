@@ -1,0 +1,225 @@
+.has-error .bootstrap-switch-label {
+	border: 1px solid red
+}
+
+.has-error .bootstrap-switch-handle-off {
+	border: 1px solid red
+}
+
+.has-error .bootstrap-switch-handle-on {
+	border: 1px solid red
+}
+
+.error {
+	color: red
+}
+
+div.rightTool {
+	float: right;
+	margin-left: 10px
+}
+
+div.rightTool .form-control {
+	width: auto;
+}
+
+div.leftTool {
+	float: left;
+}
+
+.table .action{
+	width: 5%;
+}
+
+.table .btn-delete {
+	color: red;
+}
+
+.modal {
+  background: transparent;
+}
+
+.modal-content {
+	border-radius: 6px;
+}
+
+.modal-backdrop,  .modal-backdrop.fade.in{
+	background: #333;
+	z-index: 1039;
+}
+
+.bottom-column
+{
+    float: none;
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.btn-small{
+	font-size: 10px;
+	padding: 5px 9px 5px 9px;
+}
+.btn-xSmall{
+	font-size: 9px;
+	padding: 2px 9px 2px 9px;
+}
+
+.table > thead > tr > th.fit-content,
+.table > tbody > tr > th.fit-content,
+.table > tfoot > tr > th.fit-content,
+.table > thead > tr > td.fit-content,
+.table > tbody > tr > td.fit-content,
+.table > tfoot > tr > td.fit-content{
+	padding:1px;	
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th{
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+.table-filter {
+	margin-bottom: 10px;
+}
+.table-filter .form-group {
+	margin-right: 20px;
+}
+.table-filter label {
+	margin-right: 10px;
+}
+.table-filter .form-control.select2 {
+	width: 250px;
+}
+
+.btn-grey {
+  /*background-color: #747474;*/
+  background-color: #f2f2f2;
+  /*color: #FFF;*/
+  color: #bfbfbf;
+  border-color: #666;
+}
+.btn-grey:hover,
+.btn-grey:active,
+.btn-grey.hover {
+  background-color: #575757;
+  color: #FFF;
+  
+}
+
+.input-group-addon{
+	cursor: pointer;
+}
+
+
+@media (min-width: 992px) {
+  .modal-xlg {
+    width: 90%;
+  }
+}
+
+
+div.dt-autofill-handle {
+	background: transparent url("../images/filler.png") no-repeat scroll center center;
+	border: none;
+	width: 10px;
+	height: 10px;
+}
+
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}
+
+.box-title.required:after {
+  content:"*";
+  color:red;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 20px;
+    margin-top: 0px;
+}
+
+.custom-page-nav span {
+	font-size: 150%;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	font-weight: 400;
+}
+
+.select2-container--default .select2-selection--single.bg-red .select2-selection__rendered {
+	color: #fff;
+}
+
+.drag-handle {
+	cursor: pointer;
+}
+
+
+/*for chrome*/
+.datepicker-dropdown{z-index:1151 !important;}
+
+.dashboard-section {
+	
+}
+
+.dashboard-section .child-section {
+	 margin-top: 10px;
+}
+.table-section .table-container {
+	overflow-y: auto;
+	max-height: 138px;
+}
+.table-section .table {
+	margin-bottom: 0px;
+}
+.table-section table tr td:nth-child(2) {
+	width: 40%;
+}
+.table-section table tr td:nth-child(3) {
+	width: 1%;
+}
+.revisit-count {
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.metric-container .upper-right-metric {
+	float: right;
+}
+.upper-right-metric .metric {
+	font-size: 12px;
+}
+.text-center{
+	text-align:center
+}
+
+.text-highlight {
+  color: #ffff00;
+}
+.text-white {
+	color: #ffffff;
+}
+.label-danger a {
+	color: #ffffff;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.quotation-id-container span {
+	display: inline-block;
+	margin-right: 20px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.select2-container--open {
+	z-index: 9999;
+}

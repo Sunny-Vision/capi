@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TravellingClaimFormP1" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ed8b5420-cebf-42af-a213-54f7a94dcb5b">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="officerName" class="java.lang.String"/>
+	<parameter name="rank" class="java.lang.String"/>
+	<parameter name="office" class="java.lang.String"/>
+	<parameter name="office2" class="java.lang.String"/>
+	<parameter name="taxiFare" class="java.lang.Double"/>
+	<parameter name="otherFare" class="java.lang.Double"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="supervisorName" class="java.lang.String"/>
+	<parameter name="supervisorRank" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="687" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="531" width="78" height="22" uuid="9da63411-edc8-420f-a5ad-b2c91d82f88f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[I certify that]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="531" width="452" height="25" uuid="eb235d54-dd4f-463d-98a7-f03dd11f4b3a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[I have taken all journeys shown on the record of journeys for duty purposes (page 3 of this form) and paid for the travelling expenses so incurred (applicable discount/ subsidy has been deducted) on the dates indicated.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="556" width="20" height="22" uuid="27ef2a91-0d08-42e9-9e6d-e64dbcd1f9c7">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[(ii)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="556" width="452" height="22" uuid="3cf4ae49-1760-47ce-b46f-cf778f082fdf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8.5"/>
+				</textElement>
+				<text><![CDATA[所使用的交通工具及乘坐等級，均符合《公務員事務規例》第722條所載的指導原則。]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="578" width="452" height="25" uuid="a72086ab-b20b-480d-9207-03714139594f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[The mode of transport and class of travel taken are in accordance with the guiding principles set out in CSR 722.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="603" width="20" height="22" uuid="e90e7f19-5b02-407f-9400-5dd2a1023a0c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[(iii)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="603" width="452" height="22" uuid="7065057e-1faa-4323-b210-c7ba211c9caa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8.5"/>
+				</textElement>
+				<text><![CDATA[乘坐的士是因為當時並無較廉宜或合適的交通工具(《公務員事務規例》第722(3)條)及因為]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="625" width="452" height="22" uuid="b043dd72-16a8-4188-9f72-0c1bb3d50b54">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[taxi was used because a more economical mode of transport was not available or appropriate (CSR 722(3)), and because]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="647" width="478" height="20" uuid="346a4715-29d3-4be1-9309-df358aee1da5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="604" width="20" height="20" uuid="8a3f3497-97dd-4aea-a7e3-cd422b8b7623">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="667" width="478" height="20" uuid="f32c5bcc-3ed3-490e-bdc7-f3a8289dd668">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="595" height="20" uuid="ed085c5e-3dc0-4109-9b24-e7cb25087a29">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[根據《 公務員事務規例 》第 723條申請發還因執行職務而乘坐公共交通工具的交通費]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="595" height="20" uuid="4d2c6814-3a2c-48da-b6d4-e334487d001c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Claim for Reimbursement of Travelling Expenses on Duty Journeys by Public Transport under CSR 723]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="210" height="20" uuid="2cb57979-31b3-489a-9923-2b68a0705093">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[填寫表格前請參閱第三頁注意事項]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="293" height="20" uuid="7e699248-534c-4a70-ae9b-e57d91c15ea0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Please read the notes on page 3 before completing this Form]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="40" width="61" height="20" uuid="0234d2c6-8fbb-45a3-afbf-0cf23405beea"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[附單編號]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="60" width="61" height="20" uuid="c77314ea-4134-4228-8279-67c9bfd2e9f0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sub. Vr. No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="60" width="81" height="20" uuid="223e1f6e-d8ef-44a0-9cd3-e85b92ec9bf1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="595" height="10" uuid="87981535-cea6-4ee5-a931-29153221ae55"/>
+				<box>
+					<bottomPen lineWidth="2.0"/>
+				</box>
+				<textElement>
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="60" height="20" uuid="6b9bee7f-9e21-45c3-9da7-7888c589582b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[第一部]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="90" width="290" height="20" uuid="1e2887f4-bce2-4c1d-ac95-f60075784e22">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(由申請人填寫 To be completed by claimant)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="35" height="20" uuid="bcad8906-cc5c-475b-97c9-766b47fa8ca9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="MingLiU" size="8"/>
+				</textElement>
+				<text><![CDATA[致To:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="110" width="237" height="20" uuid="62adfd89-7317-4980-a32c-c1da25991ef4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[     Commissioner for Census & Statistics     ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="130" width="237" height="15" uuid="715977c0-02f6-4435-92a4-8450dfadb9cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="MingLiU" size="8"/>
+				</textElement>
+				<text><![CDATA[( 部 門 首 長 Head of Department)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="110" width="65" height="20" uuid="d48a7875-1468-4825-b3e1-26128c461d72">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[成本中心]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="130" width="65" height="15" uuid="a2fedb69-f3ff-41cf-9645-5b59359a90a0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Cost Centre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="110" width="24" height="20" uuid="2fabc2ac-21da-4fe0-8def-9a204aa42e32"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="110" width="24" height="20" uuid="bf192f7f-4489-4b3c-a16c-f1335679bf0a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="110" width="24" height="20" uuid="a32b0e28-2b29-4c4a-85eb-0c1ae2e776d1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="110" width="24" height="20" uuid="1a7f130e-4ec4-44ba-b8b8-09043ed8977a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="110" width="24" height="20" uuid="68d700ff-a8cc-4285-9f5f-eddeaddbcedb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="110" width="24" height="20" uuid="e713be7d-18b6-48dc-b4d8-96d223a2f3a8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="547" y="110" width="24" height="20" uuid="30d3eda0-b091-42b7-b3fc-2bf1cf1f0420">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="571" y="110" width="24" height="20" uuid="8a730143-ccac-4407-a911-15cca0022690">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="145" width="17" height="20" uuid="81b583cc-04e5-4225-a57b-f2c23365f261">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="145" width="85" height="20" uuid="0bf7796b-284e-4c92-a376-3ac38edebbd8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[申請人姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="165" width="85" height="15" uuid="c97aeeaa-3716-483f-9c00-9a45d58088e7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Claimant's Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="180" width="154" height="15" uuid="22364ca0-bb02-43c1-80dc-c59675458b72">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="6"/>
+				</textElement>
+				<text><![CDATA[用正楷書寫  ( in block letters)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="145" width="20" height="20" uuid="57f5c551-7712-4c82-8f1c-040ca17fe139">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="145" width="65" height="20" uuid="14ca1cde-8160-4fef-9cbd-6225329f08d7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[身份證號碼]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="165" width="65" height="15" uuid="e4a90748-5ae9-4636-adec-0b8ff5d9edb3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[I.D.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="145" width="24" height="25" uuid="aa5304a8-2b78-41d1-b9d5-4d75dbe34394">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="145" width="24" height="25" uuid="285a3c54-9b35-457e-87a3-3219194fffe8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="145" width="24" height="25" uuid="5f124f38-2ab7-43c8-908a-62c01be79bed"/>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="145" width="24" height="25" uuid="9f041c7d-cbdf-4701-94c4-73a416610a3c"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="145" width="24" height="25" uuid="02c62ee8-f7f8-4384-969b-26e15f8f55e9"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="145" width="24" height="25" uuid="77ced5e7-1cc4-42f4-bfc9-4c732fab3386"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="547" y="145" width="24" height="25" uuid="f1685f87-810c-4eb7-b054-b688a48dc13c"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="571" y="145" width="24" height="25" uuid="0e7f56ea-4484-4d4f-9d8e-5479f2015eb6"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="200" width="17" height="20" uuid="74e40fbe-7e32-4c68-92b6-b86b191b4803">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[3.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="200" width="97" height="20" uuid="e38fb862-fab0-499b-b6fb-9b1ab4c4de97">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[辦事處/部門名稱]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="220" width="97" height="15" uuid="dc03137b-d710-4fef-a512-58aebebcbe03">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Office/Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="200" width="155" height="34" uuid="3558b1bd-068d-4c54-b20c-74fb16d1a9b2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[CPI / Census & Statistics Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="215" width="20" height="20" uuid="5236cbf0-4028-4fc6-b76c-08c027817482">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[4.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="215" width="65" height="20" uuid="1a6d5653-5fa9-488e-825c-20141413a47c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[職級 Rank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="235" width="17" height="25" uuid="9a041fa3-a4dd-47ba-b0a7-1981279a75f0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[5.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="235" width="82" height="25" uuid="9df663a5-07d4-4ab5-a144-280724ace14a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[所有工作地點]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="316" width="578" height="20" uuid="d90c80df-2a19-4a86-985d-cef239804a22">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[   Place of outside duty : As per attached]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="339" width="17" height="25" uuid="644e528d-8937-4d52-b9fc-d9c7cc13ee78">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[6.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="339" width="292" height="25" uuid="bcaa506d-f92b-40ab-acca-c1101b9e1e3b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[住所詳細地址 (請參看《公務員事務規例》第 721(6)條)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="364" width="577" height="20" uuid="d5007a35-4af6-4f4f-b525-ef005a2d8069">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="MingLiU"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="384" width="595" height="15" uuid="fd9b25c9-06c8-450f-acf1-b59825f83f43">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(如出外辦公時的路程包括往返住所，則須填寫此欄。  To be completed only where the duty journeys involve travelling to and/or from home.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="409" width="17" height="20" uuid="b779dcec-b1d6-4e7e-9fdf-3247959e516d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[7.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="409" width="64" height="20" uuid="05b0b67e-901b-486c-ab10-da49d044479c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[申請數額]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="429" width="336" height="39" uuid="8aaa7f4a-679d-40d4-87f9-9af964a1b8ce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[申請付還總數額   (細目見本表格背頁)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="429" width="242" height="15" uuid="8c881533-0ad1-44fd-a13f-3834f299abb5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[數額 Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="444" width="122" height="43" uuid="964709a1-18e1-43b5-beea-f796341fa2d5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[其他 (的士除外)
+Other(Except Taxi)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="444" width="120" height="43" uuid="c24ecc38-896c-4e1a-aa4c-fe33cd04ce2a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="9"/>
+				</textElement>
+				<text><![CDATA[的士費 Taxi Fare]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="509" width="17" height="22" uuid="0e8d4c0f-2121-408a-a040-cfa1beaab368">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[8.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="509" width="80" height="22" uuid="e74a6969-c3d1-486e-b0cb-9d76c2ee4712">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8.5"/>
+				</textElement>
+				<text><![CDATA[本人茲證明]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="509" width="20" height="22" uuid="ebf64c4f-1529-4b8f-9e38-b4b02f2542f3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8.5"/>
+				</textElement>
+				<text><![CDATA[(i)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="509" width="452" height="22" uuid="61d52c27-a546-4072-9742-d2a39be1357e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8.5"/>
+				</textElement>
+				<text><![CDATA[本人因執行職務所涉路程已載於行程記錄表(本表格第三頁)，並已在所示的日期支付有關的交通費用（已扣減適用的折扣或資助）。]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="115" y="145" width="154" height="34" uuid="2ec90d2d-afa1-461a-9f9d-dc73a3837a9b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{officerName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="410" y="215" width="185" height="20" uuid="f2c7be68-d6f2-4d26-8516-0c47685850fc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rank}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="17" y="266" width="578" height="25" uuid="2ad5cd35-1c60-48f2-81c1-7f13c8f0418c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($P{office}.equals("-"),""," Office: " + $P{office})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="17" y="291" width="578" height="25" uuid="aa1701ed-50b5-47c6-b601-2bf8683b9a75">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($P{office2}.equals("-"),""," Office2: " + $P{office2})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="353" y="487" width="120" height="20" uuid="c3c0b8b0-da9d-46a0-87f1-20992670d65b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph leftIndent="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ " + $P{taxiFare}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="473" y="487" width="122" height="20" uuid="e747ca4a-6981-46c0-b162-d187a21429dd"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph leftIndent="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ " + $P{otherFare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="311" y="339" width="284" height="25" uuid="32939fae-4e49-48c8-8fcf-4f795a768088">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Full address of home (please refer to CSR 721(6))]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="235" width="140" height="25" uuid="b391b8f2-ab9d-4b65-9899-c580967597aa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Full address of all places of work]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="468" width="336" height="39" uuid="16034551-1fad-4670-966b-2f2d3b0f5c2f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Total reimbursement claimed as per breakdown on page 3 of this form]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="90" width="60" height="20" uuid="e5a480cb-a6e0-40cb-850e-ffc3a77db4f0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Section I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="409" width="120" height="20" uuid="f04aa58a-1a68-4ec1-bd99-55839b52d939"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount claimed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="235" width="161" height="25" uuid="5e568186-2ead-4e1b-a8b6-6096e195e0ab"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MingLiU" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(即辦事處／外勤地點) 詳細地址]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="235" width="164" height="25" uuid="1fbcafd3-2071-48af-8e3f-be71262dd85c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ (i.e. office/place of outside duty)]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

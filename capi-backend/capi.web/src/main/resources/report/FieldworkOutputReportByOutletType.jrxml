@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-05-17T14:57:36 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProductReviewReport" pageWidth="1684" pageHeight="1190" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1644" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71280aa5-db08-4087-b3f8-35c5d3cf208e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Crosstab_CH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CG" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CT" mode="Opaque" backcolor="#005FB3">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="scRecordSet" uuid="5c9d50f0-9bf1-4e7c-9823-d756a88a76e2">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="attribute" class="java.lang.String"/>
+		<field name="specification" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="allocationBatch" class="java.lang.String"/>
+	<parameter name="purpose" class="java.lang.String"/>
+	<parameter name="totalAssignmentCount" class="java.lang.Integer"/>
+	<parameter name="totalQuotationRecordCount" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="team" class="java.lang.String"/>
+	<field name="rank" class="java.lang.String"/>
+	<field name="displayName" class="java.lang.String"/>
+	<field name="outletTypeShortCode" class="java.lang.String"/>
+	<field name="outletTypeEnglishName" class="java.lang.String"/>
+	<field name="quotationRecordCount" class="java.lang.Integer"/>
+	<field name="assignmentCount" class="java.lang.Integer"/>
+	<title>
+		<band height="60" splitType="Prevent">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="702" y="0" width="240" height="40" uuid="cb30fd3a-ec4f-4754-9e93-33afcfeb0d1e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Time New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HKSAR
+Census and Statistics Department
+Consumer Price Index Section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="702" y="40" width="240" height="20" uuid="456842db-f80a-4c21-bebc-8ca1ae8149d8">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Time New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fieldwork Output Report (by Outlet)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="1020" y="1" width="80" height="20" uuid="0720cca6-79be-4f9d-bd7d-ce6382f4430d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Time New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Survey:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="1100" y="1" width="150" height="20" uuid="3a720c42-a17d-4171-9bb1-333887c306ba">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{purpose}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy HH:mm:ss" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="1480" y="1" width="158" height="18" uuid="6963e77d-04ad-4d69-9343-8a63e7867bab"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="740" y="1" width="100" height="20" uuid="7d250a5c-ad5c-4178-bd19-f0d4c65dfbaa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Time New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Batch:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="840" y="1" width="150" height="20" uuid="9fb20391-7461-4bc7-9747-0eced8fca55e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{allocationBatch}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="410" y="1" width="100" height="20" uuid="5f13ccf5-df7a-491f-ae7d-31d3d4ac5ce6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Time New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ReferenceMonth:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="510" y="1" width="200" height="20" uuid="d596a14a-c6cb-4fea-8d60-70da5a9ab5bb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="30" y="1" width="350" height="20" uuid="098d15c8-083d-478a-890c-871f2a61fd5e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="0">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of Assignments (Total no. of Quotation records)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="30" y="21" width="350" height="20" uuid="7c7b449f-65e9-4f53-9f84-3baa175b22ea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalAssignmentCount} +" ("+$P{totalQuotationRecordCount}+")"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="16" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="1550" y="0" width="32" height="16" uuid="05798a31-8626-43fe-8bc3-828ec5b71708"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Page:]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="1582" y="0" width="21" height="16" uuid="bc70ebea-64f7-4ee2-8ada-2f8f10382b0f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="1603" y="0" width="16" height="16" uuid="d4d285ed-e4a2-402f-ad46-6721277db6df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement stretchType="RelativeToTallestObject" x="1619" y="0" width="21" height="16" uuid="0d81210b-5521-4fe3-9ea0-4490ff5b3612"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="356">
+			<crosstab>
+				<reportElement x="0" y="0" width="1644" height="356" uuid="e31426b1-5e24-44ba-b03b-0a5a5335d002">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<rowGroup name="team1" width="60" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{team}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CH">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="40" uuid="cf1f5e7b-eee1-4a46-a6f1-a778d897f471"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{team1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CT">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="160" height="20" forecolor="#FFFFFF" uuid="4b6f0585-67e9-42f4-a340-1efd044bf23d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="displayName1" width="100" totalPosition="Start">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{displayName}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CH">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="20" uuid="2432a8bb-2819-4ec5-8c75-76e0ca83a6e6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{displayName1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CG">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="20" uuid="1552b67d-b21d-4d7e-bd09-60b45fb056da"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Sub Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="outletTypeShortCode1" height="20" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{outletTypeShortCode}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CH">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="20" uuid="d649225e-c630-4119-b608-b0da759aeb20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{outletTypeShortCode1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CT">
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="80" forecolor="#FFFFFF" uuid="bf798bef-6696-402d-bda9-5464d2250105"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<columnGroup name="outletTypeEnglishName1" height="60">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{outletTypeEnglishName}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab 1_CH">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="30" uuid="c2871b09-ee6f-42af-af0c-e0fb0b85fb02">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.1"/>
+									<leftPen lineWidth="0.1"/>
+									<bottomPen lineWidth="0.1"/>
+									<rightPen lineWidth="0.1"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{outletTypeEnglishName1}]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="110" height="30" uuid="6e10cfee-fef7-41e8-9b39-f6987fc41540"/>
+								<box>
+									<topPen lineWidth="0.1"/>
+									<leftPen lineWidth="0.1"/>
+									<bottomPen lineWidth="0.1"/>
+									<rightPen lineWidth="0.1"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Assignment Count
+(Quotation Count)]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents>
+							<staticText>
+								<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="1b6c8e10-51d2-4b2f-b6fa-53b84c1daff8"/>
+								<text><![CDATA[Total outletTypeEnglishName1]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="assignmentCount_MEASURE1" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$F{assignmentCount}]]></measureExpression>
+				</measure>
+				<measure name="quotationRecordCount_MEASURE1" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$F{quotationRecordCount}]]></measureExpression>
+				</measure>
+				<crosstabCell width="110" height="20">
+					<cellContents mode="Opaque" style="Crosstab 1_CD">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="20" uuid="4005589c-3168-43ec-a358-622ab19f4b1f"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}+"\n("+$V{quotationRecordCount_MEASURE1}+")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" columnTotalGroup="outletTypeShortCode1">
+					<cellContents mode="Opaque" style="Crosstab 1_CT">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="6e3383d3-fed3-47eb-b691-bb6678b799e8"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}+"\n("+$V{quotationRecordCount_MEASURE1}+")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" columnTotalGroup="outletTypeEnglishName1">
+					<cellContents mode="Opaque" style="Crosstab 1_CG">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="10" uuid="fa65d645-7feb-4cb1-a36a-52d64f24bf18"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="10" width="60" height="10" uuid="0425e2ca-d61e-4e35-880d-3744c993db74"/>
+							<textFieldExpression><![CDATA[$V{quotationRecordCount_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="110" height="20" rowTotalGroup="team1">
+					<cellContents mode="Opaque" style="Crosstab 1_CT">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="20" forecolor="#FFFFFF" uuid="b96a6108-28bb-4358-9c25-a47e86d90332"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}+"\n("+$V{quotationRecordCount_MEASURE1}+")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="team1" columnTotalGroup="outletTypeShortCode1">
+					<cellContents mode="Opaque" style="Crosstab 1_CT">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="65d6ed3e-dc2d-40f7-93a5-4796b7900674"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}+"\n("+$V{quotationRecordCount_MEASURE1}+")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="team1" columnTotalGroup="outletTypeEnglishName1">
+					<cellContents mode="Opaque" style="Crosstab 1_CT">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="10" forecolor="#FFFFFF" uuid="a40425d3-e074-4544-8d34-118bd3652a73"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="10" width="60" height="10" forecolor="#FFFFFF" uuid="aefcd8f2-51c3-4b3e-add4-c84fede72ece"/>
+							<textFieldExpression><![CDATA[$V{quotationRecordCount_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="110" height="20" rowTotalGroup="displayName1">
+					<cellContents mode="Opaque" style="Crosstab 1_CG">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="20" uuid="8800a811-2e95-46b9-9bf4-3dc55a355e06"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}+"\n("+$V{quotationRecordCount_MEASURE1}+")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="displayName1" columnTotalGroup="outletTypeShortCode1">
+					<cellContents mode="Opaque" style="Crosstab 1_CT">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="9fe8a200-2faa-48c4-ba13-2a7307c677cc"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}+"\n("+$V{quotationRecordCount_MEASURE1}+")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="displayName1" columnTotalGroup="outletTypeEnglishName1">
+					<cellContents mode="Opaque" style="Crosstab 1_CG">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="10" uuid="5363409a-7249-4b97-92c5-52fb2cb3d24a"/>
+							<textFieldExpression><![CDATA[$V{assignmentCount_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="10" width="60" height="10" uuid="57f915ef-b536-441e-8a7b-1594b7c9b021"/>
+							<textFieldExpression><![CDATA[$V{quotationRecordCount_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>

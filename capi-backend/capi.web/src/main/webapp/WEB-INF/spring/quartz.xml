@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  
+ <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+ <!--  SIMPLE JOB -->
+  
+ <!--  A simple job factory: MethodInvokingJobDetailFactoryBean
+   If you just need to invoke a method from an object, use this bean factory 
+   See: 25.6.2 Using the MethodInvokingJobDetailFactoryBean
+   @http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/scheduling.html -->
+<bean id="capiJobDetailBean" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+	<property name="jobClass" value="com.kinetix.batch.CAPIBatchJob"></property>
+	<property name="durability" value="true"/>
+</bean>
+ 
+ 
+  
+ <!--  A simple trigger: SimpleTriggerBean
+   See: 25.6.3 Wiring up jobs using triggers and the SchedulerFactoryBean
+   @http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/scheduling.html-->
+   <bean id="cronTrigger" 
+                class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="capiJobDetailBean" />
+		<!-- start at 01:00 am every day -->
+		<property name="cronExpression" value="0 0 01 * * ?" />
+	</bean>
+
+	<bean id="databaseMonitorBean" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.kinetix.batch.DatabaseConnectionMonitorTask"></property>
+		<property name="durability" value="true"/>
+	</bean>
+    <bean id="cronMonitorTrigger"
+                class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="databaseMonitorBean" />
+		<!-- run every 30 mins -->
+		<property name="cronExpression" value="0 */30 * * * ?" />
+	</bean>
+   
+   <!-- 
+<bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"
+   p:jobDetail-ref="methodJobDetailBean"
+   p:startDelay="1000"
+   p:repeatInterval="1000" />
+    -->
+  
+ <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+ <!--  SCHEDULER -->
+  
+ <!-- Schedules the jobs 
+   Triggers need to be scheduled. Spring offers a SchedulerFactoryBean that exposes triggers to be set as properties. 
+   SchedulerFactoryBean schedules the actual jobs with those triggers
+   See: 25.6.3 Wiring up jobs using triggers and the SchedulerFactoryBean
+   @http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/scheduling.html -->
+ <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+   p:waitForJobsToCompleteOnShutdown="true" >
+   <property name="configLocation" value="classpath:quartz.properties"/>
+   <property name="dataSource" ref="dataSource_audit"/>
+   <property name="schedulerName" value="${quartz.schedulerName}"/>
+   <property name="overwriteExistingJobs" value="true"/>
+   <property name="autoStartup" value="true"/>
+   <property name="jobFactory" ref="AutowiringSpringBeanJobFactory"></property>
+	<property name="triggers">
+        <list>
+            <ref bean="cronTrigger" />
+            <ref bean="cronMonitorTrigger" />
+        </list>
+    </property>
+ </bean>
+ 
+</beans>

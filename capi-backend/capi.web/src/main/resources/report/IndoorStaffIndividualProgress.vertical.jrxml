@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2015-12-11T17:36:47 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IndoorStaffIndividualProgress" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" whenResourceMissingType="Empty" uuid="1964cb41-507a-4309-b7f5-2db7dc55d782">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	<parameter name="purpose" class="java.lang.String"/>
+	<parameter name="batchCode" class="java.lang.String"/>
+	<parameter name="indoorStaff" class="java.lang.String"/>
+	<parameter name="cpiSurveyForm" class="java.lang.String"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="cpiBasePeriod" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="groupId" class="java.lang.Integer"/>
+	<field name="groupCode" class="java.lang.String"/>
+	<field name="groupChineseName" class="java.lang.String"/>
+	<field name="subGroupId" class="java.lang.Integer"/>
+	<field name="subGroupCode" class="java.lang.String"/>
+	<field name="subGroupChineseName" class="java.lang.String"/>
+	<field name="total" class="java.lang.Long"/>
+	<field name="outstanding" class="java.lang.Long"/>
+	<field name="completed" class="java.lang.Long"/>
+	<field name="verification" class="java.lang.Long"/>
+	<field name="revisit" class="java.lang.Long"/>
+	<variable name="totalOutstanding" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstanding}]]></variableExpression>
+	</variable>
+	<variable name="allTotal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<variable name="totalCompleted" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{completed}]]></variableExpression>
+	</variable>
+	<variable name="totalVerification" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{verification}]]></variableExpression>
+	</variable>
+	<group name="GroupByGroup">
+		<groupExpression><![CDATA[$F{groupId}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="110" height="20" uuid="18f19909-0552-440e-a306-5e48666db312"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="Microsoft JhengHei" size="8" isBold="false"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[IF(LEN($F{groupCode}) == 0 && LEN($F{groupChineseName}) == 0, "", $F{groupCode} +" - " + $F{groupChineseName})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement x="110" y="0" width="110" height="20" uuid="7b00cb40-1b95-47cc-9b9d-5a615e011ba3"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format(SUM($F{outstanding}))]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement x="220" y="0" width="110" height="20" uuid="e2355787-0474-4014-ab9c-f67f14fab8d1"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format(SUM($F{completed}))]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement x="445" y="0" width="110" height="20" uuid="dcacf9c2-268a-4c00-9c3e-c5870d0f58e3"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format(SUM($F{verification}))]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupByGroup" isBlankWhenNull="true">
+					<reportElement x="330" y="0" width="115" height="20" uuid="ba97c5dd-c90e-42b7-9548-069614fd1680"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format(SUM($F{total}))]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<textField pattern="dd-MM-yyyy HH:mm:ss">
+				<reportElement x="412" y="0" width="158" height="18" uuid="ccc046ae-a46a-4c21-bcb3-6204a1484867"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="0" width="160" height="40" uuid="fb3e6004-eee7-413f-a600-2593594db4f0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HKSAR
+Census and Statistics Department
+Consumer Price Index Section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="40" width="240" height="20" uuid="eb057e1f-b710-41ed-8674-2be810de8174"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Indoor Staff Progress Report (Individual Officer)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="114" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="0" width="120" height="20" uuid="f1fca841-867a-4028-bdf7-fa3a5544262c"/>
+				<textElement>
+					<font fontName="Microsoft JhengHei" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{purpose}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="20" uuid="5865c4f5-9816-448b-9425-291598a673bf"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Purpose:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="0" width="120" height="20" uuid="934ef9d5-60fc-42b3-b6c6-89f057f56b7c"/>
+				<textElement>
+					<font fontName="Microsoft JhengHei" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{batchCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="170" y="0" width="80" height="20" uuid="c22658ec-13b5-430f-a963-8ce9897728c1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Batch Code:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="435" y="0" width="120" height="20" uuid="0051073f-2264-458e-a58d-76f3e518ba52"/>
+				<textElement>
+					<font fontName="Microsoft JhengHei" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{indoorStaff}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="0" width="65" height="20" uuid="c40a0b0a-8c8d-4aad-8c72-1e686235674e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Indoor Staff:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="259" y="20" width="100" height="20" uuid="53a3a96b-e515-437b-ac25-adecddc0da27"/>
+				<textElement>
+					<font fontName="Microsoft JhengHei" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="90" y="20" width="109" height="20" uuid="0be50636-61b0-4e69-a090-2717196d22e3"/>
+				<textElement>
+					<font fontName="Microsoft JhengHei" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cpiSurveyForm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="90" height="20" uuid="6abd2e7f-6201-4acb-bb7e-e59bd23f281f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[CPI Survey Form:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="20" width="60" height="20" uuid="2873980d-c861-4ded-a66d-b804dee36f07"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Period:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="40" width="130" height="46" uuid="9429a9ab-1c0f-4fe4-af78-f4ee986df73d"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of quotation records received from indoor allocator]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="40" width="134" height="46" uuid="e389c172-9cad-47fa-948c-8a2a5cbaa6a7"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding quotation records in data conversion stage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="40" width="136" height="46" uuid="723b5f2c-d7b3-488c-8158-eb8fc12f97d1"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of completed quotation records in data conversion stage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="40" width="132" height="46" uuid="eeba4672-59b8-4e01-918f-13f99966b936"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding quotations records in verification stage]]></text>
+			</staticText>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="12" y="86" width="72" height="20" uuid="de11833a-28f8-4deb-b6f7-b5f2c41183bf"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{totalOutstanding})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="84" y="86" width="62" height="20" uuid="dc05d28a-8005-4c31-b7b5-68dab3d94c31"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.0").format($V{totalOutstanding}.doubleValue() / $V{allTotal}.doubleValue() * 100) + "%"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="146" y="86" width="74" height="20" uuid="4c0b01fa-12b6-4335-bf9a-e40b7b312a44"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{totalCompleted})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="220" y="86" width="62" height="20" uuid="3f905e95-5afb-4179-b380-fe6edb0f9e10"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.0").format($V{totalCompleted}.doubleValue() / $V{allTotal}.doubleValue() * 100) + "%"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="412" y="86" width="132" height="20" uuid="06a08fb0-c33f-435d-a780-fc06fd758cea"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{totalVerification})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="282" y="86" width="130" height="20" uuid="299bba22-7ee7-4823-8b73-bdbe38c55e96"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{allTotal})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="20" width="100" height="20" uuid="bfa4a5fa-0fd1-478a-b5fa-5177fb6c5b4f"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[CPI Base Period:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="459" y="20" width="96" height="20" uuid="828b9959-f2a0-4262-99ee-ab7abcebfbb8"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Microsoft JhengHei" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cpiBasePeriod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="48" uuid="5e578bfa-2e2e-4b52-b3b1-172ca32fed28"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="110" height="48" uuid="e425621f-eb35-4dd5-9f61-387b97bde092"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding quotation records in data conversion stage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="110" height="48" uuid="f19a551a-73f2-409e-a23e-795eeffa793f"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of completed quotation records in data conversion stage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="0" width="110" height="48" uuid="9a9d29bf-467b-422c-b6b7-2232dcf2c518"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding quotations records in verification stage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="115" height="48" uuid="0c4fbcca-30da-4dd9-873c-3f55e19887ac"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of quotation records received from indoor allocator]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="110" height="20" uuid="0b5dd818-cbc6-46ca-b661-3abb8eb90aff"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Microsoft JhengHei" size="8" isBold="false"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF(LEN($F{groupCode}) == 0 && LEN($F{groupChineseName}) == 0, "", $F{subGroupCode} + " - " + $F{subGroupChineseName})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="0" width="110" height="20" uuid="a29ffbda-33b4-4220-99e1-2c553693e107"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{outstanding}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="220" y="0" width="110" height="20" uuid="82adb7f8-a4e9-4334-87a3-e53bce7bd656"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{completed}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="110" height="20" uuid="28f6a907-c3a3-4bfa-9f77-27932b7d3a94"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{verification}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="330" y="0" width="115" height="20" uuid="46389a7a-380b-4b44-942a-af144da27fb1"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="0" width="110" height="20" uuid="01f3efe9-e0e2-4bf6-9e66-408eb28e254d"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{totalOutstanding})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="220" y="0" width="110" height="20" uuid="127b4f49-b650-4e50-90b6-40d8cf46cd23"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{totalCompleted})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="110" height="20" uuid="0055bda9-4887-4d1d-8c8f-686ff7a94c53"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{totalVerification})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="330" y="0" width="115" height="20" uuid="c1e79318-65a4-45fb-aed8-5b43d75db9ec"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.#").format($V{allTotal})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="20" uuid="6b7bc84d-fc4e-42e0-912a-12853c7e5988"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Count:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="465" y="6" width="32" height="16" uuid="9ccf21bf-dc5d-4348-a028-0156f6447bc3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Page:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="534" y="6" width="21" height="16" uuid="dbc5bb2c-8114-402d-9b28-f4c7fa1e0c17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="518" y="6" width="16" height="16" uuid="ed04bb38-c741-4c04-a992-02abaa8bcbe6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="497" y="6" width="21" height="16" uuid="8e6f9dce-d6cb-46a4-a0cd-d7c2a61a082a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

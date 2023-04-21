@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-07-04T12:04:54 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AuditTrail" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6a70f74e-081e-4eda-bb87-00d45f388027">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="outstandingQuotationRecord" class="java.lang.Integer"/>
+	<parameter name="totalAssignment" class="java.lang.Integer"/>
+	<parameter name="periodStart" class="java.lang.String"/>
+	<parameter name="outstandingAssignment" class="java.lang.Integer"/>
+	<parameter name="periodEnd" class="java.lang.String"/>
+	<parameter name="totalQuotationRecord" class="java.lang.Integer"/>
+	<parameter name="surveys" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="team" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rank" class="java.lang.String"/>
+	<field name="officerName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="officerCode" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalAssignmentCountMRPS" class="java.lang.Integer"/>
+	<field name="outstandingAssignmentCountMRPS" class="java.lang.Integer"/>
+	<field name="totalQuotationRecordCountMRPS" class="java.lang.Integer"/>
+	<field name="outstandingQuotationRecordCountMRPS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalAssignmentCountGHS" class="java.lang.Integer"/>
+	<field name="outstandingAssignmentCountGHS" class="java.lang.Integer"/>
+	<field name="totalQuotationRecordCountGHS" class="java.lang.Integer"/>
+	<field name="outstandingQuotationRecordCountGHS" class="java.lang.Integer"/>
+	<field name="totalAssignmentCountBuilding" class="java.lang.Integer"/>
+	<field name="outstandingAssignmentCountBuilding" class="java.lang.Integer"/>
+	<field name="totalQuotationRecordCountBuilding" class="java.lang.Integer"/>
+	<field name="outstandingQuotationRecordCountBuilding" class="java.lang.Integer"/>
+	<field name="nightSessionAssignmentCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="vTotalAssignmentCountMRPS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalAssignmentCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="vTotalQuotationRecordCountMRPS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalQuotationRecordCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="vOutstandingAssignmentCountMRPS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingAssignmentCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="vOutstandingQuotationRecordCountMRPS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingQuotationRecordCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="vTotalAssignmentCountGHS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalAssignmentCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="vTotalQuotationRecordCountGHS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalQuotationRecordCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="vOutstandingAssignmentCountGHS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingAssignmentCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="vOutstandingQuotationRecordCountGHS" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingQuotationRecordCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="vTotalAssignmentCountBuilding" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalAssignmentCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="vTotalQuotationRecordCountBuilding" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalQuotationRecordCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="vOutstandingAssignmentCountBuilding" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingAssignmentCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="vOutstandingQuotationRecordCountBuilding" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingQuotationRecordCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="vNightSessionAssignmentCount" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{nightSessionAssignmentCount}]]></variableExpression>
+	</variable>
+	<variable name="finalTotalAssignmentCountMRPS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalAssignmentCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="finalTotalQuotationRecordCountMRPS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalQuotationRecordCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="finalOutstandingAssignmentCountMRPS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingAssignmentCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="finalOutstandingQuotationRecordCountMRPS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingQuotationRecordCountMRPS}]]></variableExpression>
+	</variable>
+	<variable name="finalTotalAssignmentCountGHS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalAssignmentCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="finalTotalQuotationRecordCountGHS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalQuotationRecordCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="finalOutstandingAssignmentCountGHS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingAssignmentCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="finalOutstandingQuotationRecordCountGHS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingQuotationRecordCountGHS}]]></variableExpression>
+	</variable>
+	<variable name="finalTotalAssignmentCountBuilding" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalAssignmentCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="finalTotalQuotationRecordCountBuilding" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalQuotationRecordCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="finalOutstandingAssignmentCountBuilding" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingAssignmentCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="finalOutstandingQuotationRecordCountBuilding" class="java.lang.Integer" resetType="Group" resetGroup="GroupTeam" calculation="Sum">
+		<variableExpression><![CDATA[$F{outstandingQuotationRecordCountBuilding}]]></variableExpression>
+	</variable>
+	<variable name="finalNightSessionAssignmentCount" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{nightSessionAssignmentCount}]]></variableExpression>
+	</variable>
+	<group name="GroupTeam">
+		<groupExpression><![CDATA[$F{team}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="20" isPrintWhenDetailOverflows="true" uuid="7fbe954c-20ad-44f4-b941-4f3536f39d1a"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{team} + ":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="130" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="8492fc8f-00cc-46b6-a5b4-c280ed094690"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vTotalAssignmentCountMRPS} + " (" + $V{vTotalQuotationRecordCountMRPS} + ")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="335" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="472e800b-24de-4b34-b8a3-db4112cb8196"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vTotalAssignmentCountGHS} + " (" + $V{vTotalQuotationRecordCountGHS} + ")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="405" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="29ef9e6c-5d56-4bfe-9ce7-a21726d9a0de"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vOutstandingAssignmentCountGHS} + " (" + $V{vOutstandingQuotationRecordCountGHS} + ")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="475" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="319e11f6-cd49-4cfc-ba60-e15a1150bdd2"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vTotalAssignmentCountGHS}.intValue()==0?0:Math.round(($V{vTotalAssignmentCountGHS}-$V{vOutstandingAssignmentCountGHS})* 10000.0/$V{vTotalAssignmentCountGHS} )/100.0 + "% (" + Math.round(($V{vTotalQuotationRecordCountGHS}-$V{vOutstandingQuotationRecordCountGHS})* 10000.0/$V{vTotalQuotationRecordCountGHS} )/100.0 +"%)"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="540" y="0" width="57" height="20" isPrintWhenDetailOverflows="true" uuid="58b25c8b-efd1-4b5c-b089-d1e4a7dde297"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vNightSessionAssignmentCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="200" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="f8dab966-fb8a-42b0-90ec-fdd390cedbb0"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vOutstandingAssignmentCountMRPS} + " (" + $V{vOutstandingQuotationRecordCountMRPS} + ")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="270" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="8c9befdc-563e-40c6-88d3-c5b83f685ddc"/>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vTotalAssignmentCountMRPS}.intValue()==0?0:Math.round(($V{vTotalAssignmentCountMRPS}-$V{vOutstandingAssignmentCountMRPS})* 10000.0/$V{vTotalAssignmentCountMRPS} )/100.0 + "% (" + Math.round(($V{vTotalQuotationRecordCountMRPS}-$V{vOutstandingQuotationRecordCountMRPS}) * 10000.0/$V{vTotalQuotationRecordCountMRPS})/100.0 +"%)"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="597" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="6d9529d4-7ae1-468b-8adc-cbed435b8f71"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vTotalAssignmentCountBuilding} + " (" + $V{vTotalQuotationRecordCountBuilding} + ")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="667" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="66dae524-a88a-47dd-9dea-a2055455881b"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vOutstandingAssignmentCountBuilding} + " (" + $V{vOutstandingQuotationRecordCountBuilding} + ")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="737" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="56b4d1d3-39de-4fb1-bf69-e67453f29c76"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Time New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vTotalAssignmentCountBuilding}.intValue()==0?0:Math.round(($V{vTotalAssignmentCountBuilding}-$V{vOutstandingAssignmentCountBuilding})* 10000.0/$V{vTotalAssignmentCountBuilding} )/100.0 + "% (" + Math.round(($V{vTotalQuotationRecordCountBuilding}-$V{vOutstandingQuotationRecordCountBuilding})* 10000.0/$V{vTotalQuotationRecordCountBuilding} )/100.0 +"%)"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="180" splitType="Stretch">
+			<textField pattern="dd-MM-yyyy HH:mm:ss">
+				<reportElement x="644" y="0" width="158" height="18" uuid="7f5d4f41-5424-458b-8f6a-b4bbe33b1d42"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="321" y="0" width="160" height="40" uuid="e24f018f-7fab-435a-a86b-d719f63696d8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HKSAR
+Census and Statistics Department
+Consumer Price Index Section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="60" width="240" height="20" uuid="64c79735-2b0f-49a4-ae24-99d8df901814"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Summary of Progress Report by Field Officer]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="480" y="80" width="290" height="20" uuid="48267709-b41a-4d91-a4ff-0ec5c9b0a817"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{periodStart} + " - " + $P{periodEnd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="441" y="80" width="40" height="20" uuid="79c45bc3-c510-4e6c-9d39-c5484fbb3e5f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Period:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="321" y="40" width="159" height="20" uuid="c7c53a86-5aea-4c55-a0a0-c83f684168a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["as at " + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="80" width="40" height="20" uuid="14b1d7de-a712-4580-a0f4-c553145cb4ea"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Survey:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="80" width="361" height="20" uuid="ada87333-e835-4da9-a964-2bb1555afff2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{surveys}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="110" width="80" height="40" uuid="8121d9fe-ac59-4c53-9d57-2b60bb53fc97"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="110" width="110" height="40" uuid="4cce7191-84c4-42ea-857f-776eacd2003c"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="110" width="80" height="40" uuid="bef2c61b-f925-4377-a05b-6824e95b147a"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of assignments completed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="110" width="80" height="40" uuid="4dfcfedc-55af-4ff5-92eb-002ecc7ab8ae"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[% of assignments completed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="110" width="80" height="40" uuid="6b1186f6-e813-4dd4-a356-3b3f21606bd9"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of quotation records]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="110" width="110" height="40" uuid="6f800240-2727-4090-aa6b-abb904fb03f2"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding quotation records]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="610" y="110" width="80" height="40" uuid="9692bc80-5bf6-4e81-b0c4-57f4d5aafdd8"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of quotation records completed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="690" y="110" width="80" height="40" uuid="ca697469-7231-44e0-90bd-26753eb90e16"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[% of quotation records completed]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="30" y="150" width="80" height="20" uuid="d3fa8cc5-cf49-4fcb-ab91-c46b657459a6"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalAssignment}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="150" width="110" height="20" uuid="b97b5c55-1b77-4d2b-a2b6-94f86e67cd31"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{outstandingAssignment}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="220" y="150" width="80" height="20" uuid="20d4f81d-4ea7-4940-8cc4-bb288c27da1a"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalAssignment} - $P{outstandingAssignment}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00%" isBlankWhenNull="true">
+				<reportElement x="300" y="150" width="80" height="20" uuid="b287ead6-0dcc-4d74-95dc-3e787e87ceff"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($P{totalAssignment} > 0 ,($P{totalAssignment} - $P{outstandingAssignment})*1.0/$P{totalAssignment},"NA")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="150" width="80" height="20" uuid="7cc849d4-7b74-467b-a943-b343d0c1a1b6"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuotationRecord}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="500" y="150" width="110" height="20" uuid="74fef033-7b27-4ce2-81fe-ea094da2de1c"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{outstandingQuotationRecord}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="610" y="150" width="80" height="20" uuid="b9de621c-003c-4b2a-ba47-8ded62da6da9"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuotationRecord} - $P{outstandingQuotationRecord}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00%" isBlankWhenNull="true">
+				<reportElement x="690" y="150" width="80" height="20" uuid="0c8ec9db-e609-4b64-acc9-691793eb0ab8"/>
+				<box padding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($P{totalQuotationRecord}>0 ,($P{totalQuotationRecord} - $P{outstandingQuotationRecord})*1.0/$P{totalQuotationRecord},"NA")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="50" height="80" uuid="219ba8bd-9e31-45b5-883e-b2fb3e0f5790"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="25" width="80" height="80" uuid="d9cab28a-69ca-4474-a122-505854b183d4"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="25" width="70" height="80" uuid="6fc6562b-f92c-4584-873a-5b6fc3d2e3f4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="25" width="70" height="80" uuid="74306ff3-e2b2-44fe-aa19-45a0b9607628">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of assignments (Total no. of quotation records)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="25" width="70" height="80" uuid="16ff0914-2bb0-41f2-bb01-22b1e8d8541c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="25" width="65" height="80" uuid="b04cb71f-f233-4077-b86a-b326bbddc876">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[% of assignments completed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="25" width="57" height="80" uuid="da1cdafd-7f02-45c4-9964-98b5ae8f349e"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Night Session]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="25" width="70" height="80" uuid="58e23932-d56a-463b-8aca-a2f59325597f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding assignments (Total no. outstanding quotation records)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="25" width="65" height="80" uuid="832191fb-80af-4832-807e-ff5c08ee3907"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[% of assignments completed (% of quotation records completed)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="597" y="25" width="70" height="80" uuid="f250d417-290a-4f69-b7ef-9b4f3430c7f2"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="667" y="25" width="70" height="80" uuid="5caea5df-0e18-4c26-a0ff-62e7cd74100d"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Total no. of outstanding assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="737" y="25" width="65" height="80" uuid="79fbb9ea-1593-4b7f-b8a1-76af56b887d7"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[% of assignments completed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="1" width="262" height="24" uuid="62467ef6-9c8e-4d9c-89fb-8bb9cb6b8422"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[GHS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="1" width="205" height="24" uuid="68c51ba2-e5b0-4a5d-87a5-c76d7c1f929a"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[MRPS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="597" y="1" width="205" height="24" uuid="7976c168-3fc1-4b15-a6dc-efcef3ad5cdb"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<text><![CDATA[Building]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="20" isPrintWhenDetailOverflows="true" uuid="6a10a1d1-8a00-4d6b-b612-0f54d07a5a84"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rank}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="50" y="0" width="80" height="20" isPrintWhenDetailOverflows="true" uuid="cb833538-bc1d-4d9d-bd55-528f1393b1af"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{officerName} + "\n(" + $F{officerCode} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="130" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="bfbd4ccc-f04d-406c-beff-3196af6b7867"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAssignmentCountMRPS} + " (" + $F{totalQuotationRecordCountMRPS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="335" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="48d7c0a1-5ec9-410c-a5fb-e77cd27dd2f7"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAssignmentCountGHS} + " (" + $F{totalQuotationRecordCountGHS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="405" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="80fe069a-1df7-4843-a37a-1704a5b9b3d3"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outstandingAssignmentCountGHS} + " (" + $F{outstandingQuotationRecordCountGHS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="475" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="277e4856-a614-4f02-8e86-73dcd1d2c5cc"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAssignmentCountGHS}.intValue()==0?0:Math.round((($F{totalAssignmentCountGHS}-$F{outstandingAssignmentCountGHS})* 10000.0/$F{totalAssignmentCountGHS}) )/100.0 + "% (" + Math.round((($F{totalQuotationRecordCountGHS}-$F{outstandingQuotationRecordCountGHS})* 10000.0/$F{totalQuotationRecordCountGHS}) )/100.0 +"%)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="540" y="0" width="57" height="20" isPrintWhenDetailOverflows="true" uuid="1275498d-d1a1-4166-b1a9-0cdfb64ec8f0"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nightSessionAssignmentCount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="200" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="35e018f9-b764-4084-8d11-fe284a47f66c"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outstandingAssignmentCountMRPS} + " (" + $F{outstandingQuotationRecordCountMRPS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="270" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="a32a5599-346c-4a82-bf68-60b25a1f7789"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAssignmentCountMRPS}.intValue()==0?0:(Math.round(($F{totalAssignmentCountMRPS}-$F{outstandingAssignmentCountMRPS})* 10000.0/$F{totalAssignmentCountMRPS})/100.0 ) + "% (" + (Math.round(($F{totalQuotationRecordCountMRPS}-$F{outstandingQuotationRecordCountMRPS})* 10000.0/$F{totalQuotationRecordCountMRPS})/100.0) +"%)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="597" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="39aa28d1-ee86-48e1-b7e1-b298959b65f3"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAssignmentCountBuilding} + " (" + $F{totalQuotationRecordCountBuilding} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="667" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="fffa8f9c-d62b-4f6a-afa1-6af219c45e1c"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outstandingAssignmentCountBuilding} + " (" + $F{outstandingQuotationRecordCountBuilding} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="737" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="c733437a-430e-45b1-a614-ac2b85467ade"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAssignmentCountBuilding}.intValue()==0?0:Math.round((($F{totalAssignmentCountBuilding}-$F{outstandingAssignmentCountBuilding})* 10000.0/$F{totalAssignmentCountBuilding}) )/100.0 + "% (" + Math.round((($F{totalQuotationRecordCountBuilding}-$F{outstandingQuotationRecordCountBuilding}) * 10000.0/$F{totalQuotationRecordCountBuilding}))/100.0 +"%)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="679" y="3" width="53" height="16" uuid="8050da1b-750e-4b50-8abe-cfbb33ce0ff4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Page:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="732" y="3" width="21" height="16" uuid="62a6d39c-8cf5-4cf3-9248-c489ff0c3b22">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="753" y="3" width="21" height="16" uuid="4fc0c894-3ac8-4a80-989c-d2f76403a1b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="774" y="3" width="28" height="16" uuid="43f238f7-a2be-4be0-aaeb-14a5b95dc881">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="20" uuid="f61de62e-8ae1-4e05-8dff-9264545f1f55">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="50" y="0" width="80" height="20" uuid="8e3ee943-2805-4953-95b9-cdf1ea1492ef">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="130" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="e480b67e-7c55-4c88-bdbd-936c7dd276b1"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalTotalAssignmentCountMRPS} + " (" + $V{finalTotalQuotationRecordCountMRPS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="200" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="59930b7c-0291-4996-8235-ef620cef9b9d"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalOutstandingAssignmentCountMRPS} + " (" + $V{finalOutstandingQuotationRecordCountMRPS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="270" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="54a7b6f1-eb66-4c08-b790-6f4e6d96a5d1"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalTotalAssignmentCountMRPS}.intValue()==0?0:Math.round(($V{finalTotalAssignmentCountMRPS}-$V{finalOutstandingAssignmentCountMRPS})* 10000.0/$V{finalTotalAssignmentCountMRPS} )/100.0 + "% (" + Math.round(($V{finalTotalQuotationRecordCountMRPS}-$V{finalOutstandingQuotationRecordCountMRPS}) * 10000.0/$V{finalTotalQuotationRecordCountMRPS})/100.0 +"%)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="335" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="518de4bd-f3b7-4604-867a-d2eab2a8d986"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalTotalAssignmentCountGHS} + " (" + $V{finalTotalQuotationRecordCountGHS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="405" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="df996113-c0de-4619-91d4-768804b96404"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalOutstandingAssignmentCountGHS} + " (" + $V{finalOutstandingQuotationRecordCountGHS} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="475" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="b79e28e9-765e-405c-acd9-e6c0844c5a1b"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalTotalAssignmentCountGHS}.intValue()==0?0:Math.round(($V{finalTotalAssignmentCountGHS}-$V{finalOutstandingAssignmentCountGHS})* 10000.0/$V{finalTotalAssignmentCountGHS} )/100.0 + "% (" + Math.round(($V{finalTotalQuotationRecordCountGHS}-$V{finalOutstandingQuotationRecordCountGHS})* 10000.0/$V{finalTotalQuotationRecordCountGHS} )/100.0 +"%)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="540" y="0" width="57" height="20" isPrintWhenDetailOverflows="true" uuid="7b34e55f-702a-45bd-880b-d271b71715bb"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalNightSessionAssignmentCount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="597" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="3e71af9d-51e0-44f7-a903-cf9545409473"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalTotalAssignmentCountBuilding} + " (" + $V{finalTotalQuotationRecordCountBuilding} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="667" y="0" width="70" height="20" isPrintWhenDetailOverflows="true" uuid="c133b582-0a59-48ba-a082-9a8db08dfa03"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalOutstandingAssignmentCountBuilding} + " (" + $V{finalOutstandingQuotationRecordCountBuilding} + ")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="GroupTeam" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="737" y="0" width="65" height="20" isPrintWhenDetailOverflows="true" uuid="9a515e33-9e73-4d6a-8039-731537f70b06"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Time New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{finalTotalAssignmentCountBuilding}.intValue()==0?0:Math.round(($V{finalTotalAssignmentCountBuilding}-$V{finalOutstandingAssignmentCountBuilding})* 10000.0/$V{finalTotalAssignmentCountBuilding} )/100.0 + "% (" + Math.round(($V{finalTotalQuotationRecordCountBuilding}-$V{finalOutstandingQuotationRecordCountBuilding})* 10000.0/$V{finalTotalQuotationRecordCountBuilding} )/100.0 +"%)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

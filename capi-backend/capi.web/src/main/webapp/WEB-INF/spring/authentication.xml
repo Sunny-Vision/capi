@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+	
+   
+	<!-- Define authentication manager for both web and method security use -->
+    <security:authentication-manager id="capi-auth" alias="authenticationManager">
+        <security:authentication-provider ref="auth-provider"> 
+        </security:authentication-provider>
+    </security:authentication-manager>    
+	
+    <!-- Define method security -->    
+    <bean id="expressionHandler"
+		class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+		<property name="permissionEvaluator" ref="permissionEvaluator"/>
+	</bean>
+	<bean id="preInvocationAdvice" class="org.springframework.security.access.expression.method.ExpressionBasedPreInvocationAdvice">
+        <property name="expressionHandler" ref="expressionHandler" />
+    </bean>
+    <util:list id="methodRoleVoter">
+	     <bean id="roleVoter"
+	        class="org.springframework.security.access.vote.RoleVoter">
+	        <property name="rolePrefix" value=""></property>
+	    </bean>
+	     <bean class="org.springframework.security.access.prepost.PreInvocationAuthorizationAdviceVoter">
+	         <constructor-arg ref="preInvocationAdvice" />
+	     </bean>
+    </util:list>
+    <bean id="methodAccessDecisionManager"
+        class="org.springframework.security.access.vote.AffirmativeBased">        
+        <constructor-arg name="decisionVoters" ref="methodRoleVoter" />
+    </bean>
+    <security:global-method-security secured-annotations="enabled"
+    	pre-post-annotations="enabled" jsr250-annotations="enabled"
+    	access-decision-manager-ref="methodAccessDecisionManager"
+    	authentication-manager-ref="capi-auth">
+	</security:global-method-security>
+  
+    
+    <!-- Define web security -->
+	<bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" >
+	    <property name="permissionEvaluator" ref="permissionEvaluator"/>
+	</bean>
+	
+ 	<bean id="webVoter" class="org.springframework.security.web.access.expression.WebExpressionVoter"/> 
+    <bean id="webAccessDecisionManager"
+        class="org.springframework.security.access.vote.AffirmativeBased">        
+        <constructor-arg name="decisionVoters" ref="webVoter" />
+    </bean>
+    
+    <!-- session registry for api authentication -->
+    <bean id="sessionRegistry_api"
+    class="org.springframework.security.core.session.SessionRegistryImpl" />
+    
+    <!-- session registry for normal form authentication -->
+    <bean id="sessionRegistry_web"
+    class="org.springframework.security.core.session.SessionRegistryImpl" />
+    
+    
+    <!-- Mobile Login -->
+	<security:http pattern="/api/**" auto-config="true" use-expressions="true" entry-point-ref="authenticationEntryPoint" 
+					authentication-manager-ref="capi-auth" 
+					access-decision-manager-ref="webAccessDecisionManager">
+      <security:intercept-url pattern="/api/ApiAccess/login" access="permitAll"/> 
+      <security:intercept-url pattern="/api/ApiAccess/loginError" access="permitAll"/>  
+      <security:intercept-url pattern="/api/ApiAccess/invalidLogin" access="permitAll"/>          
+	  <security:intercept-url pattern="/api/j_spring_security_check" access="permitAll"/>
+	  <security:intercept-url pattern="/api/**" access="isAuthenticated()"/>
+	   
+	   <security:form-login login-page="/api/ApiAccess/login"
+	  	authentication-success-handler-ref="authenticationSuccessHandler"
+	  	authentication-failure-handler-ref="authenticationFailureHandler"
+	  	authentication-details-source-ref="capiDetailsSource"
+	  	login-processing-url="/api/j_spring_security_check"
+	  	password-parameter="password" username-parameter="username" />
+	  <security:logout invalidate-session="true" logout-url="/api/j_spring_security_logout" success-handler-ref="CapiLogoutSuccessHandler" />
+	  <security:session-management>
+	    <security:concurrency-control max-sessions="1" expired-url="/api/ApiAccess/invalidLogin" session-registry-ref="sessionRegistry_api" />
+	  </security:session-management>
+	</security:http>
+	
+	
+    <!-- Normal Form login -->
+	<security:http auto-config="true" use-expressions="true" entry-point-ref="authenticationEntryPoint" 
+					authentication-manager-ref="capi-auth" 
+					access-decision-manager-ref="webAccessDecisionManager">
+	  <security:intercept-url pattern="/Access/login" access="permitAll"/>
+	  <security:intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+	  <security:intercept-url pattern="/resources/**" access="permitAll" />
+	  <security:intercept-url pattern="/phantom/**" access="permitAll and hasIpAddress('127.0.0.1')"/>
+	  <security:intercept-url pattern="/**" access="isAuthenticated()"/>	 
+	   
+	  <security:expression-handler ref="webexpressionHandler"/>
+	  
+	  <security:form-login login-page="/Access/login"
+	  	authentication-success-handler-ref="authenticationSuccessHandler"
+	  	authentication-failure-handler-ref="authenticationFailureHandler"
+	  	authentication-details-source-ref="capiDetailsSource"
+	  	login-processing-url="/j_spring_security_check"
+	  	password-parameter="password" username-parameter="username" />	  
+	  <security:logout invalidate-session="true" success-handler-ref="CapiLogoutSuccessHandler" />
+	  
+	   <security:session-management>
+	    <security:concurrency-control max-sessions="1" expired-url="/Access/login" session-registry-ref="sessionRegistry_web" />
+	  </security:session-management>
+	  
+	  <!-- 
+	   <security:session-management invalid-session-url="/Access/login?error=E00152" >
+	    <security:concurrency-control max-sessions="1" expired-url="/Access/login" session-registry-ref="sessionRegistry_web" />
+	  </security:session-management>
+	   -->
+	</security:http>
+	
+	
+
+
+</beans>

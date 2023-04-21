@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 
+	<context:property-placeholder location="classpath:app.properties" />	
+	 -->
+	<bean id="propertyConfigurer" class="org.jasypt.spring31.properties.EncryptablePropertyPlaceholderConfigurer">
+	   <constructor-arg ref="pbeEncryptor" />
+	   <property name="locations">
+	     <list>
+	       <value>classpath:app.properties</value>
+	     </list>
+	   </property>
+	 </bean>
+	 
+	
+	<mvc:annotation-driven>
+	    <mvc:message-converters>
+	        <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	            <property name="objectMapper">
+	                <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+	                    <property name="dateFormat">
+	                        <bean class="java.text.SimpleDateFormat">
+	                            <constructor-arg type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
+	                        </bean>
+	                    </property>
+	                </bean>
+	            </property>
+	        </bean>
+	    </mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<context:component-scan base-package="com.kinetix.component,com.kinetix.controller,com.kinetix.api,capi.dal,capi.service,com.kinetix.batch" />
+	
+	<task:annotation-driven executor="myExecutor" scheduler="myScheduler"/>
+	<task:executor id="myExecutor" pool-size="5"/>
+	<task:scheduler id="myScheduler" pool-size="100"/>
+	
+	<mvc:interceptors>
+		<ref bean="CapiWebInterceptor" />
+		<mvc:interceptor>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/edit"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/saveOutlet"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/cacheQuotationRecordSearchFilterAndResult"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/editQuotationRecord"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/saveQuotationRecord"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/assignmentUnitCategoryInfoDialog"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/assignmentUnitCategoryInfoDialogVerifyContent"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/assignmentUnitCategoryInfoDialogRevisitContent"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/assignmentUnitCategoryInfoDialogIPContent"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/assignmentUnitCategoryInfoDialogNormalContent"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/saveAssignmentUnitCategory"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/bigSubmit"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/smallSubmit"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/setVisited"/>
+			<mvc:mapping path="/assignmentManagement/AssignmentMaintenance/resetChangeProduct"/>
+			<ref bean="assignmentEditSessionModelInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>		
+
+	<import resource="hibernate.xml" />
+	<import resource="hibernate-audit.xml" />
+	<import resource="authentication.xml" />
+	
+	
+	<import resource="quartz.xml" />
+	 
+	 
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+         <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="800000000" />
+ 
+    </bean>
+	
+	<!-- Locale resolver for cookies --> 
+    <bean id="localeResolver"
+        class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="cookieName" value="language" />
+		<!-- 
+		<property name="cookieMaxAge" value="3600" /> 
+		-->
+        <property name="defaultLocale" value="en" />
+    </bean>
+	 <!-- Message .properties sources --> 
+    <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource"> 
+        <property name="basename" value="messages" />
+    </bean>
+</beans>

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-29T11:56:37 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SummaryOfQuotations" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="1ee24550-333a-4871-804e-d020d4560dcb">
+	<style name="Crosstab_CH" mode="Opaque" backcolor="#7FFFD4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CG" mode="Opaque" backcolor="#BFFFEA">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CT" mode="Opaque" backcolor="#00B377">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CH" mode="Opaque" backcolor="#7FFFD4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CG" mode="Opaque" backcolor="#BFFFEA">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CT" mode="Opaque" backcolor="#00B377">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 2_CH" mode="Opaque" backcolor="#7FFFD4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 2_CG" mode="Opaque" backcolor="#BFFFEA">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 2_CT" mode="Opaque" backcolor="#00B377">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 2_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="outletType" class="java.lang.String"/>
+	<parameter name="district" class="java.lang.String"/>
+	<parameter name="survey" class="java.lang.String"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="countAllAssignment" class="java.lang.Long"/>
+	<parameter name="countAllQuotationRecord" class="java.lang.Long">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="districtId" class="java.lang.Integer"/>
+	<field name="districtCode" class="java.lang.String"/>
+	<field name="districtName" class="java.lang.String"/>
+	<field name="shortCode" class="java.lang.String"/>
+	<field name="totalA" class="java.lang.Integer"/>
+	<field name="totalQr" class="java.lang.Integer"/>
+	<variable name="crosstabTotalA" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{totalA}]]></variableExpression>
+	</variable>
+	<variable name="crosstabTotalQr" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{totalQr}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="314" y="0" width="175" height="43" uuid="86f0522c-4bf1-4546-b21d-c679f1a9d581"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[HKSAR
+Census and Statistics Department
+Consumer Price Index Section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="246" y="43" width="310" height="30" uuid="74876977-2ce0-496f-850a-774fc6276f2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Summary of Quotations by District and Outlet type (CPI Assignments)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="640" y="0" width="158" height="18" uuid="ca3cbc14-ddb1-468d-8b5a-3766e5673de0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="90" y="0" width="100" height="18" uuid="6862a5a9-63cb-4a77-bf7f-e813490d56cf"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Survey:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="190" y="0" width="200" height="18" uuid="eb01e760-c0b0-4632-a939-9336470b2d97"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{survey}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="410" y="0" width="100" height="18" uuid="48abf022-d649-4d21-99a6-6a580db2cb0e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Period:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="510" y="0" width="200" height="18" uuid="6ca461d2-ca8c-44ce-858b-b94c61a1888a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="150" height="20" uuid="409f695d-16de-4790-8748-f262a8f848ee"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of Assignments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="150" y="0" width="150" height="20" uuid="4c15ec0e-2159-457c-8777-4233d2ab22dc"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no. of Quotation records]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="150" height="20" uuid="80a98edf-8c52-46d3-a89a-37b3d804514d"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{countAllAssignment}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="150" y="20" width="150" height="20" uuid="27ecf15f-6909-4b4b-8db7-178635465fa2"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{countAllQuotationRecord}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="70" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="70" height="20" uuid="575a4f77-4140-4519-812c-c20347369d37">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+				</box>
+			</frame>
+			<line>
+				<reportElement x="0" y="0" width="70" height="20" uuid="441399ed-e796-4824-8788-8c249c379318">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="33" y="0" width="35" height="11" uuid="188b7082-2f7e-4876-93b4-fa9b49a5af89">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="9" width="48" height="10" uuid="77983472-2a75-4354-abf8-599576b340c0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Outlet type]]></text>
+			</staticText>
+			<crosstab>
+				<reportElement x="0" y="0" width="798" height="60" uuid="519ec4e8-48c8-42dd-b4fd-871c29c82cd0"/>
+				<rowGroup name="shortCode1" width="70" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{shortCode}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab 2_CH">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="70" height="20" uuid="76da2b5b-0e90-484c-9f5f-e7254a659cc0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{shortCode1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab 2_CT">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="20" forecolor="#FFFFFF" uuid="c9ea04f5-ea18-4f2b-bbb1-40f7206d6a48"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<text><![CDATA[Total Count:]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="districtCode1" height="20" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{districtCode}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab 2_CH">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="70" height="20" uuid="7cb5cab0-2d46-4569-848d-284e2baa27ca"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{districtCode1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab 2_CT"/>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="totalA_MEASURE1" class="java.lang.Integer">
+					<measureExpression><![CDATA[$F{totalA}]]></measureExpression>
+				</measure>
+				<measure name="totalQr_MEASURE1" class="java.lang.Integer">
+					<measureExpression><![CDATA[$F{totalQr}]]></measureExpression>
+				</measure>
+				<measure name="crosstabTotalA_MEASURE1" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$V{crosstabTotalA}]]></measureExpression>
+				</measure>
+				<measure name="crosstabTotalQr_MEASURE1" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$V{crosstabTotalQr}]]></measureExpression>
+				</measure>
+				<crosstabCell width="70" height="20">
+					<cellContents mode="Opaque" style="Crosstab 2_CD">
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="0" width="70" height="10" uuid="9be40086-9968-4a9c-b424-2acc571f45f5"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{totalA_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="10" width="70" height="10" uuid="a2304df4-43b0-41b7-9375-7dc0c21c296d"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + $V{totalQr_MEASURE1} + ")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="70" height="20" columnTotalGroup="districtCode1">
+					<cellContents mode="Opaque" style="Crosstab 2_CT">
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="0" width="70" height="10" forecolor="#FFFFFF" uuid="3af81952-85a3-43c2-be28-9e04bad045cd"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{crosstabTotalA_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="10" width="70" height="10" forecolor="#FFFFFF" uuid="a4d0a33d-ce1a-4fb1-b96a-1663f115f901"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + $V{crosstabTotalQr_MEASURE1} + ")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="70" height="20" rowTotalGroup="shortCode1">
+					<cellContents mode="Opaque" style="Crosstab 2_CT">
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="0" width="70" height="10" forecolor="#FFFFFF" uuid="f1246b08-cf2f-44c8-8367-403e8aee5357"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{crosstabTotalA_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="10" width="70" height="10" forecolor="#FFFFFF" uuid="6f212806-2280-4445-b462-f3971a0befbe"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + $V{crosstabTotalQr_MEASURE1} + ")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="70" height="20" rowTotalGroup="shortCode1" columnTotalGroup="districtCode1">
+					<cellContents mode="Opaque" style="Crosstab 2_CT">
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="0" width="70" height="10" forecolor="#FFFFFF" uuid="f8b6a6bf-822a-4060-a9f5-2f24c2c2e8e1"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{crosstabTotalA_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="10" width="70" height="10" forecolor="#FFFFFF" uuid="a1f66898-e316-4c35-8086-0d2377747ade"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + $V{crosstabTotalQr_MEASURE1} + ")"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>
